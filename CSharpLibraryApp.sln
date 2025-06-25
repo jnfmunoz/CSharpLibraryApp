@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36127.28 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpLibraryApp", "CSharpLibraryApp\CSharpLibraryApp.csproj", "{67B89242-065D-429C-A7EA-A45140DDDFAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{210AB1CC-F76E-44FE-A84E-211812548C10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csproj", "{D68FE4AB-4FD8-4F63-B46D-AA7A29318991}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67B89242-065D-429C-A7EA-A45140DDDFAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67B89242-065D-429C-A7EA-A45140DDDFAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B89242-065D-429C-A7EA-A45140DDDFAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B89242-065D-429C-A7EA-A45140DDDFAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{210AB1CC-F76E-44FE-A84E-211812548C10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{210AB1CC-F76E-44FE-A84E-211812548C10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{210AB1CC-F76E-44FE-A84E-211812548C10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{210AB1CC-F76E-44FE-A84E-211812548C10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D68FE4AB-4FD8-4F63-B46D-AA7A29318991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D68FE4AB-4FD8-4F63-B46D-AA7A29318991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D68FE4AB-4FD8-4F63-B46D-AA7A29318991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D68FE4AB-4FD8-4F63-B46D-AA7A29318991}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62DA6347-E5DA-4106-85DD-D32C1FDCF561}
+	EndGlobalSection
+EndGlobal
