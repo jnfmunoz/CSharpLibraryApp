@@ -11,6 +11,7 @@ namespace Data
     {
         public Conexion(): base("MySQL") {  }
         public ITable<Pais> _Pais => this.GetTable<Pais>();
+        public ITable<Editorial> _Editorial => this.GetTable<Editorial>();
 
     }
 }

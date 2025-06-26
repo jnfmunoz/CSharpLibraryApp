@@ -49,3 +49,5 @@ C:\projects\CSharpLibraryApp\CSharpLibraryApp\bin\Debug\System.Diagnostics.Diagn
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\bin\Debug\System.IO.Pipelines.xml
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\bin\Debug\System.Memory.xml
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\bin\Debug\System.Numerics.Vectors.xml
+C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.FormMenu.resources
+C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.FormEditorial.resources

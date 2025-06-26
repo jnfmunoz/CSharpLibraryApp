@@ -101,14 +101,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormAutores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormAutores.Designer.cs">
+      <DependentUpon>FormAutores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditoriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditoriales.Designer.cs">
+      <DependentUpon>FormEditoriales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenu.Designer.cs">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLibros.Designer.cs">
+      <DependentUpon>FormLibros.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormEditoriales.resx">
+      <DependentUpon>FormEditoriales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenu.resx">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
