@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,19 @@ namespace CSharpLibraryApp
 {
     public partial class FormEditoriales : Form
     {
+        private LEditorial editorial;
         public FormEditoriales()
         {
             InitializeComponent();
+
+            Object[] objetos =
+            {
+                dataGridViewEditorial
+            };
+
+            editorial = new LEditorial(objetos);
+            editorial.ListEditorial();
+
         }
 
     }
