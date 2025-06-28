@@ -37,6 +37,11 @@ namespace Logica
                                 }).ToList();
 
                     _dataGridView.DataSource = list;
+
+                    foreach (DataGridViewColumn col in _dataGridView.Columns)
+                    {
+                        col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    }
                 }
             }
             catch (Exception ex) { 

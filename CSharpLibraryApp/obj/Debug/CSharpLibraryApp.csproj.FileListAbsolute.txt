@@ -51,3 +51,4 @@ C:\projects\CSharpLibraryApp\CSharpLibraryApp\bin\Debug\System.Memory.xml
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\bin\Debug\System.Numerics.Vectors.xml
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.FormMenu.resources
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.FormEditoriales.resources
+C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.FormEditorial.resources

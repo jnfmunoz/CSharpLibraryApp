@@ -37,7 +37,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAgregarEditorial = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridViewEditorial = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
@@ -96,7 +96,7 @@
             this.groupBox3.Controls.Add(this.button4);
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.buttonAgregarEditorial);
             this.groupBox3.Location = new System.Drawing.Point(12, 133);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(776, 62);
@@ -130,14 +130,15 @@
             this.button2.Text = "Editar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonAgregarEditorial
             // 
-            this.button1.Location = new System.Drawing.Point(210, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonAgregarEditorial.Location = new System.Drawing.Point(210, 20);
+            this.buttonAgregarEditorial.Name = "buttonAgregarEditorial";
+            this.buttonAgregarEditorial.Size = new System.Drawing.Size(75, 23);
+            this.buttonAgregarEditorial.TabIndex = 0;
+            this.buttonAgregarEditorial.Text = "Agregar";
+            this.buttonAgregarEditorial.UseVisualStyleBackColor = true;
+            this.buttonAgregarEditorial.Click += new System.EventHandler(this.buttonAgregarEditorial_Click);
             // 
             // groupBox4
             // 
@@ -190,7 +191,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAgregarEditorial;
         private System.Windows.Forms.DataGridView dataGridViewEditorial;
     }
 }

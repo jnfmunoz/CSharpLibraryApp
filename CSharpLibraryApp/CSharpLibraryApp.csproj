@@ -107,6 +107,12 @@
     <Compile Include="FormAutores.Designer.cs">
       <DependentUpon>FormAutores.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEditorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditorial.Designer.cs">
+      <DependentUpon>FormEditorial.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditoriales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormEditorial.resx">
+      <DependentUpon>FormEditorial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEditoriales.resx">
       <DependentUpon>FormEditoriales.cs</DependentUpon>
     </EmbeddedResource>
