@@ -19,6 +19,16 @@ namespace Logica
             }
         }
 
+        public int GetIdPaisFromName(string nombre)
+        {
+            using (var db = new Conexion())
+            {
+                var pais = db.GetTable<Pais>().FirstOrDefault(p => p.nombre == nombre);
+                return pais != null ? pais.idPAIS : 0;
+
+            }
+        }
+
     }
 
 }

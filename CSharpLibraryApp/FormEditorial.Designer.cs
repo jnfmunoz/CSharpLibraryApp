@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelNombre = new System.Windows.Forms.Label();
-            this.labelPais = new System.Windows.Forms.Label();
-            this.buttonAgregar = new System.Windows.Forms.Button();
-            this.buttonLimpiar = new System.Windows.Forms.Button();
-            this.buttonCancelar = new System.Windows.Forms.Button();
-            this.textBoxNombre = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBoxPais = new System.Windows.Forms.ComboBox();
+            this.textBoxNombre = new System.Windows.Forms.TextBox();
+            this.labelPais = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonCancelar = new System.Windows.Forms.Button();
+            this.buttonLimpiar = new System.Windows.Forms.Button();
+            this.buttonAgregar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -53,6 +53,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(363, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Editorial";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.comboBoxPais);
@@ -65,6 +74,39 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // comboBoxPais
+            // 
+            this.comboBoxPais.FormattingEnabled = true;
+            this.comboBoxPais.Location = new System.Drawing.Point(251, 102);
+            this.comboBoxPais.Name = "comboBoxPais";
+            this.comboBoxPais.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPais.TabIndex = 3;
+            // 
+            // textBoxNombre
+            // 
+            this.textBoxNombre.Location = new System.Drawing.Point(251, 75);
+            this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNombre.TabIndex = 2;
+            // 
+            // labelPais
+            // 
+            this.labelPais.AutoSize = true;
+            this.labelPais.Location = new System.Drawing.Point(218, 101);
+            this.labelPais.Name = "labelPais";
+            this.labelPais.Size = new System.Drawing.Size(27, 13);
+            this.labelPais.TabIndex = 1;
+            this.labelPais.Text = "Pais";
+            // 
+            // labelNombre
+            // 
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.Location = new System.Drawing.Point(201, 75);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(44, 13);
+            this.labelNombre.TabIndex = 0;
+            this.labelNombre.Text = "Nombre";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.buttonCancelar);
@@ -76,41 +118,14 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
-            // label1
+            // buttonCancelar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(363, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Editorial";
-            // 
-            // labelNombre
-            // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(201, 75);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(44, 13);
-            this.labelNombre.TabIndex = 0;
-            this.labelNombre.Text = "Nombre";
-            // 
-            // labelPais
-            // 
-            this.labelPais.AutoSize = true;
-            this.labelPais.Location = new System.Drawing.Point(218, 101);
-            this.labelPais.Name = "labelPais";
-            this.labelPais.Size = new System.Drawing.Size(27, 13);
-            this.labelPais.TabIndex = 1;
-            this.labelPais.Text = "Pais";
-            // 
-            // buttonAgregar
-            // 
-            this.buttonAgregar.Location = new System.Drawing.Point(251, 19);
-            this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(75, 23);
-            this.buttonAgregar.TabIndex = 0;
-            this.buttonAgregar.Text = "Agregar";
-            this.buttonAgregar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Location = new System.Drawing.Point(413, 19);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelar.TabIndex = 2;
+            this.buttonCancelar.Text = "Cancelar";
+            this.buttonCancelar.UseVisualStyleBackColor = true;
             // 
             // buttonLimpiar
             // 
@@ -121,29 +136,15 @@
             this.buttonLimpiar.Text = "Limpiar";
             this.buttonLimpiar.UseVisualStyleBackColor = true;
             // 
-            // buttonCancelar
+            // buttonAgregar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(413, 19);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancelar.TabIndex = 2;
-            this.buttonCancelar.Text = "Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
-            // 
-            // textBoxNombre
-            // 
-            this.textBoxNombre.Location = new System.Drawing.Point(251, 75);
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNombre.TabIndex = 2;
-            // 
-            // comboBoxPais
-            // 
-            this.comboBoxPais.FormattingEnabled = true;
-            this.comboBoxPais.Location = new System.Drawing.Point(251, 102);
-            this.comboBoxPais.Name = "comboBoxPais";
-            this.comboBoxPais.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxPais.TabIndex = 3;
+            this.buttonAgregar.Location = new System.Drawing.Point(251, 19);
+            this.buttonAgregar.Name = "buttonAgregar";
+            this.buttonAgregar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAgregar.TabIndex = 0;
+            this.buttonAgregar.Text = "Agregar";
+            this.buttonAgregar.UseVisualStyleBackColor = true;
+            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
             // 
             // FormEditorial
             // 

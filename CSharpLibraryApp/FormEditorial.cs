@@ -23,12 +23,42 @@ namespace CSharpLibraryApp
 
         private void LoadComboPaises()
         {
-                LPais lPais = new LPais();
-                var getPaises = lPais.GetPaises();
-                comboBoxPais.DataSource = getPaises;
-                comboBoxPais.DisplayMember = "nombre";
-                comboBoxPais.DataSource = "idPAIS";
+            LPais lPais = new LPais();
+            var getPaises = lPais.GetPaises();
 
+            comboBoxPais.DataSource = getPaises;
+            comboBoxPais.DisplayMember = "nombre";
+            comboBoxPais.ValueMember = "idPAIS";
+
+        }
+
+        private void buttonAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string nombre = textBoxNombre.Text.Trim();
+                if (comboBoxPais.SelectedValue != null)
+                {
+                    int idPais = (int)comboBoxPais.SelectedValue;
+                    
+                    LEditorial editorial = new LEditorial();
+                    editorial.SaveEditorial(nombre, idPais);
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona un país válido.");
+                }
+
+                
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar la editorial: " + ex.Message);
+            }
         }
     }
 }

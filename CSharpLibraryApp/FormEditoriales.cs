@@ -31,16 +31,16 @@ namespace CSharpLibraryApp
 
         private void buttonAgregarEditorial_Click(object sender, EventArgs e)
         {
-            this.Hide();  // Ocultamos el formulario actual (FormEditoriales)
+            this.Hide();  
 
             var form = new FormEditorial();
             form.FormClosed += (s, args) =>
             {
-                this.Show();               // Mostramos FormEditoriales cuando se cierre FormEditorial
-                editorial.ListEditorial(); // Refrescamos la lista
+                this.Show();              
+                editorial.ListEditorial();
             };
 
-            form.Show(); // Abrimos FormEditorial de forma no modal para que el código siga
+            form.Show(); 
         }
 
         private void RefreshEditorial(object sender, FormClosedEventArgs e)
@@ -48,5 +48,21 @@ namespace CSharpLibraryApp
             editorial.ListEditorial();
         }
 
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            editorial.DeleteEditorial();
+        }
+
+        private void buttonEditarEditorial_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewEditorial.CurrentRow != null)
+            {
+                int id = Convert.ToInt32(dataGridViewEditorial.CurrentRow.Cells[0].Value);
+                string nombre = dataGridViewEditorial.CurrentRow.Cells[1].Value.ToString();
+                //int idPais = 
+
+                var form = new FormEditorial();
+            }
+        }
     }
 }
