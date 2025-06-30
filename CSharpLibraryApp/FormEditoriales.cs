@@ -36,7 +36,8 @@ namespace CSharpLibraryApp
             var form = new FormEditorial();
             form.FormClosed += (s, args) =>
             {
-                this.Show();              
+                this.Show();
+                textBoxBuscar.Text = "";
                 editorial.ListEditorial();
             };
 
@@ -59,10 +60,40 @@ namespace CSharpLibraryApp
             {
                 int id = Convert.ToInt32(dataGridViewEditorial.CurrentRow.Cells[0].Value);
                 string nombre = dataGridViewEditorial.CurrentRow.Cells[1].Value.ToString();
-                //int idPais = 
+                string nombrePais = dataGridViewEditorial.CurrentRow.Cells[2].Value.ToString();
+
+                LPais lPais = new LPais();
+                int idPais = lPais.GetIdPaisFromName(nombrePais);
+
+                if (idPais == 0)
+                {
+                    MessageBox.Show("No se pudo encontrar el país asociado");
+                    return;
+                }
 
                 var form = new FormEditorial();
+                form.SetDataForUpdate(id, nombre, idPais);
+
+                this.Hide();
+                form.FormClosed += (s, args) =>
+                {
+                    this.Show();
+                    textBoxBuscar.Text = "";
+                    editorial.ListEditorial();
+                };
+                form.Show();
+
             }
+            else
+            {
+                MessageBox.Show("Selecciona una Editorial!");
+            }
+
+        }
+
+        private void textBoxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            editorial.SearchEditorial(textBoxBuscar.Text.Trim());
         }
     }
 }

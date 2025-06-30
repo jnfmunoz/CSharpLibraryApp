@@ -1,5 +1,6 @@
 ﻿using Data;
 using LinqToDB;
+using LinqToDB.SqlQuery;
 using Logica.Library;
 using Org.BouncyCastle.Crypto;
 using System;
@@ -15,8 +16,14 @@ namespace Logica
     public class LEditorial : Librarys
     {
         private DataGridView _dataGridView;
-        private String _accion = "insert";
+        private String _action = "insert";
         private int _idEditorial = 0;
+
+        public int IdEditorial
+        {
+            get => _idEditorial;
+            set => _idEditorial = value;
+        }
 
         protected Conexion _db;
 
@@ -60,12 +67,54 @@ namespace Logica
             }
         }       
 
-        public void SaveEditorial(string nombre, int idPais)
+        public void SearchEditorial(string field)
         {
+            using (var db = new Conexion())
+            {
+                var query = (from e in db.GetTable<Editorial>()
+                            join p in db.GetTable<Pais>()
+                            on e.PAIS_idPAIS equals p.idPAIS
+                            select new
+                            {
+                                ID = e.idEDITORIAL,
+                                Editorial = e.nombre,
+                                Pais = p.nombre
+                            });
+
+                if (!string.IsNullOrWhiteSpace(field))
+                {
+                    query = query.Where(e => e.ID.ToString().StartsWith(field)
+                                           || e.Editorial.StartsWith(field)
+                                           || e.Pais.StartsWith(field));
+                }
+
+                var result = query.ToList();
+
+                _dataGridView.DataSource = result;
+                
+                foreach (DataGridViewColumn col in _dataGridView.Columns)
+                {
+                    col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+            }
+        }
+
+
+        public void SaveEditorial(string nombre, int idPais)
+        {            
+            var existeDuplicado = _db.GetTable<Editorial>()
+                .Any(e => e.nombre == nombre && e.idEDITORIAL != _idEditorial);
+
+            if (existeDuplicado)
+            {
+                MessageBox.Show("Ya existe otra editorial con ese nombre.");
+                return;
+            }
+
             _db.BeginTransactionAsync();
             try
             {
-                switch (_accion)
+                switch (_action)
                 {
                     case "insert":
                         _db.GetTable<Editorial>()
@@ -73,6 +122,7 @@ namespace Logica
                             .Value(e => e.PAIS_idPAIS, idPais)
                             .Insert();
                         break;
+
                     case "update":
                         _db.GetTable<Editorial>()
                             .Where(e => e.idEDITORIAL == _idEditorial)
@@ -85,14 +135,12 @@ namespace Logica
 
                 _db.CommitTransaction();
                 MessageBox.Show("Editorial guardada exitosamente.");
-
             }
             catch (Exception ex)
             {
                 _db.RollbackTransaction();
                 MessageBox.Show("Error al guardar editorial: " + ex.Message);
             }
-
         }
 
         public void GetEditorialSelected()
@@ -105,7 +153,6 @@ namespace Logica
             {
                 _idEditorial = 0;
             }
-
         }
 
         public void DeleteEditorial()
@@ -125,12 +172,14 @@ namespace Logica
                     _Editorial.Where(e => e.idEDITORIAL.Equals(_idEditorial)).Delete();
 
                 }
-
                 ListEditorial();
-
             }
         }
 
+        public void ChangeAction(string action)
+        {
+            _action = action;
+        }
 
     }
 }

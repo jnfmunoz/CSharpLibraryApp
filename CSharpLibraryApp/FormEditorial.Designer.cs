@@ -38,7 +38,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonLimpiar = new System.Windows.Forms.Button();
-            this.buttonAgregar = new System.Windows.Forms.Button();
+            this.buttonGuardar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -109,9 +109,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.buttonGuardar);
             this.groupBox3.Controls.Add(this.buttonCancelar);
             this.groupBox3.Controls.Add(this.buttonLimpiar);
-            this.groupBox3.Controls.Add(this.buttonAgregar);
             this.groupBox3.Location = new System.Drawing.Point(12, 352);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(776, 86);
@@ -136,15 +136,15 @@
             this.buttonLimpiar.Text = "Limpiar";
             this.buttonLimpiar.UseVisualStyleBackColor = true;
             // 
-            // buttonAgregar
+            // buttonGuardar
             // 
-            this.buttonAgregar.Location = new System.Drawing.Point(251, 19);
-            this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(75, 23);
-            this.buttonAgregar.TabIndex = 0;
-            this.buttonAgregar.Text = "Agregar";
-            this.buttonAgregar.UseVisualStyleBackColor = true;
-            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
+            this.buttonGuardar.Location = new System.Drawing.Point(251, 19);
+            this.buttonGuardar.Name = "buttonGuardar";
+            this.buttonGuardar.Size = new System.Drawing.Size(75, 23);
+            this.buttonGuardar.TabIndex = 3;
+            this.buttonGuardar.Text = "Guardar";
+            this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // FormEditorial
             // 
@@ -177,6 +177,6 @@
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Button buttonLimpiar;
-        private System.Windows.Forms.Button buttonAgregar;
+        private System.Windows.Forms.Button buttonGuardar;
     }
 }

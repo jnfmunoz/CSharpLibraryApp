@@ -14,10 +14,14 @@ namespace CSharpLibraryApp
 {
     public partial class FormEditorial : Form
     {
+        private LEditorial editorial;
+
         public FormEditorial()
         {
             InitializeComponent();
             LoadComboPaises();
+
+            editorial = new LEditorial();
 
         }
 
@@ -32,7 +36,17 @@ namespace CSharpLibraryApp
 
         }
 
-        private void buttonAgregar_Click(object sender, EventArgs e)
+        public void SetDataForUpdate(int id, string nombre, int idPais)
+        {
+            textBoxNombre.Text = nombre;
+            comboBoxPais.SelectedValue = idPais;
+            
+            editorial.IdEditorial = id;
+            editorial.ChangeAction("update");
+
+        }
+
+        private void buttonGuardar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -40,8 +54,7 @@ namespace CSharpLibraryApp
                 if (comboBoxPais.SelectedValue != null)
                 {
                     int idPais = (int)comboBoxPais.SelectedValue;
-                    
-                    LEditorial editorial = new LEditorial();
+
                     editorial.SaveEditorial(nombre, idPais);
 
                     this.Close();
@@ -51,7 +64,7 @@ namespace CSharpLibraryApp
                     MessageBox.Show("Selecciona un país válido.");
                 }
 
-                
+
 
             }
 
