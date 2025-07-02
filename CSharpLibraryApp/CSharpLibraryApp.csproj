@@ -101,10 +101,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormAutores.cs">
+    <Compile Include="Autor\FormAutor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAutores.Designer.cs">
+    <Compile Include="Autor\FormAutor.Designer.cs">
+      <DependentUpon>FormAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Autor\FormAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Autor\FormAutores.Designer.cs">
       <DependentUpon>FormAutores.cs</DependentUpon>
     </Compile>
     <Compile Include="Editorial\FormEditorial.cs">
@@ -145,6 +151,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Autor\FormAutores.resx">
+      <DependentUpon>FormAutores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editorial\FormEditorial.resx">
       <DependentUpon>FormEditorial.cs</DependentUpon>
     </EmbeddedResource>

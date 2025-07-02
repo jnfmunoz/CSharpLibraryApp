@@ -2,6 +2,7 @@
 using LinqToDB;
 using LinqToDB.DataProvider.DB2;
 using Logica.Library;
+using Org.BouncyCastle.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,33 +23,28 @@ namespace Logica
             get => _idGenero;
             set => _idGenero = value;
         }
-
-        protected Conexion _db;
+      
+        public LGenero() { }       
 
         public LGenero(object[] objetos)
         {
-            _dataGridView = (DataGridView)objetos[0];
-            _db = new Conexion();
+            _dataGridView = (DataGridView)objetos[0];            
 
         }
-        public LGenero()
-        {
-            _db = new Conexion();
-        }
 
-        public void ListGenero()
+        public async Task ListGeneroAsync()
         {
             try
             {
                 using (var db = new Conexion())
                 {
-                    var list = (from g in db.GetTable<Genero>()
+                    var list = await (from g in db.GetTable<Genero>()
                                 orderby g.idGENERO
                                 select new
                                 {
                                     ID = g.idGENERO,
                                     Genero = g.nombre
-                                }).ToList();
+                                }).ToListAsync();
 
                     _dataGridView.DataSource = list;
 
@@ -65,7 +61,7 @@ namespace Logica
             }
         }
 
-        public void SearchGenero(string field)
+        public async Task SearchGeneroAsync(string field)
         {
             using (var db = new Conexion())
             {
@@ -83,7 +79,7 @@ namespace Logica
                                             || g.Genero.StartsWith(field));
                 }
 
-                var result = query.ToList();
+                var result = await query.ToListAsync();
 
                 _dataGridView.DataSource = result;
 
@@ -97,60 +93,49 @@ namespace Logica
 
         }
 
-        public void SaveGenero(string nombre)
+        public async Task SaveGeneroAsync(string nombre)
         {
-            /* esta funcion la podria hacer global asi como las validaciones */
-            //var existeDuplicado = _db.GetTable<Genero>()
-            //                    .Any(g => g.nombre == nombre && g.idGENERO != _idGenero);
-
-            //if (existeDuplicado)
-            //{
-            //    MessageBox.Show("Ya existe otro género con ese nombre.");
-            //    return;
-            //}
-
             using (var db = new Conexion())
             {
-                var existeDuplicado = db.GetTable<Genero>()
-                    .Any(g => g.nombre == nombre && g.idGENERO != _idGenero);
+                var existeDuplicado = await db.GetTable<Genero>()
+                    .AnyAsync(g => g.nombre == nombre && g.idGENERO != _idGenero);
 
                 if (existeDuplicado)
                 {
                     MessageBox.Show("Ya existe otro género con ese nombre.");
                     return;
                 }
-            }
 
-            _db.BeginTransactionAsync();
+                await db.BeginTransactionAsync();
 
-            try
-            {
-                switch (_action)
+                try
                 {
-                    case "insert":
-                        _db.GetTable<Genero>()
-                            .Value(g => g.nombre, nombre)
-                            .Insert();
-                        break;
+                    switch (_action)
+                    {
+                        case "insert":
+                            await db.GetTable<Genero>()
+                                .Value(g => g.nombre, nombre)
+                                .InsertAsync();
+                            break;
 
-                    case "update":
-                        _db.GetTable<Genero>()
-                            .Where(g => g.idGENERO == _idGenero)
-                            .Set(g => g.nombre, nombre)
-                            .Update();
-                        break;
+                        case "update":
+                            await db.GetTable<Genero>()
+                                .Where(g => g.idGENERO == _idGenero)
+                                .Set(g => g.nombre, nombre)
+                                .UpdateAsync();
+                            break;
+                    }
+
+                    await db.CommitTransactionAsync();
+                    MessageBox.Show("Género guardado exitosamente.");
+
                 }
-
-                _db.CommitTransaction();
-                MessageBox.Show("Género guardado exitosamente.");
-
+                catch (Exception ex)
+                {
+                    await db.RollbackTransactionAsync();
+                    MessageBox.Show("Error al guardar género: " + ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                _db.RollbackTransaction();
-                MessageBox.Show("Error al guardar género: " + ex.Message);
-            }
-
         }
 
         private void GetGeneroSelected()
@@ -165,7 +150,7 @@ namespace Logica
             }
         }
 
-        public void DeleteGenero()
+        public async Task DeleteGeneroAsync()
         {
             GetGeneroSelected();
 
@@ -179,13 +164,20 @@ namespace Logica
                     "Eliminar Editorial",
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    _Genero.Where(g => g.idGENERO.Equals(_idGenero)).Delete();
+                    using (var db = new Conexion())
+                    {
+                        await _Genero.Where(g => g.idGENERO.Equals(_idGenero)).DeleteAsync();
+                    }
 
                 }
 
-                ListGenero();
+                await ListGeneroAsync();
             }
+        }
 
+        public void ChangeAction(string action)
+        {
+            _action = action;
         }
 
 

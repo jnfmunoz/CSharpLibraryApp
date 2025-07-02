@@ -143,7 +143,7 @@ namespace Logica
             }
         }
 
-        public void GetEditorialSelected()
+        private void GetEditorialSelected()
         {
             if (_dataGridView.CurrentRow != null)
             {
@@ -155,7 +155,7 @@ namespace Logica
             }
         }
 
-        private void DeleteEditorial()
+        public void DeleteEditorial()
         {
             GetEditorialSelected();
 

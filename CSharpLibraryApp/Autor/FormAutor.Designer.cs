@@ -1,6 +1,6 @@
-﻿namespace CSharpLibraryApp
+﻿namespace CSharpLibraryApp.Autor
 {
-    partial class FormAutores
+    partial class FormAutor
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormAutores";
+            this.Text = "FormAutor";
         }
 
         #endregion

@@ -96,6 +96,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Autor.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Editorial.cs" />
     <Compile Include="Genero.cs" />

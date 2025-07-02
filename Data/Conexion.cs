@@ -13,6 +13,7 @@ namespace Data
         public ITable<Pais> _Pais => this.GetTable<Pais>();
         public ITable<Editorial> _Editorial => this.GetTable<Editorial>();
         public ITable<Genero> _Genero => this.GetTable<Genero>();
+        public ITable<Autor> _Autor => this.GetTable<Autor>();
 
     }
 }

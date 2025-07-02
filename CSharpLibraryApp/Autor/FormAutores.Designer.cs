@@ -1,6 +1,6 @@
-﻿namespace CSharpLibraryApp.Genero
+﻿namespace CSharpLibraryApp.Autor
 {
-    partial class FormGeneros
+    partial class FormAutores
     {
         /// <summary>
         /// Required designer variable.
@@ -35,16 +35,16 @@
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonAtras = new System.Windows.Forms.Button();
-            this.buttonEliminarGenero = new System.Windows.Forms.Button();
-            this.buttonEditarGenero = new System.Windows.Forms.Button();
-            this.buttonAgregarGenero = new System.Windows.Forms.Button();
+            this.buttonEliminarAutor = new System.Windows.Forms.Button();
+            this.buttonEditarAutor = new System.Windows.Forms.Button();
+            this.buttonAgregarAutor = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridViewGenero = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAutor = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenero)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAutor)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -53,7 +53,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 8);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(776, 58);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
             // label1
@@ -61,9 +61,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(348, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Géneros";
+            this.label1.Text = "Autores";
             // 
             // groupBox2
             // 
@@ -72,7 +72,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 72);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(776, 60);
-            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             // 
             // label2
@@ -95,13 +95,13 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.buttonAtras);
-            this.groupBox3.Controls.Add(this.buttonEliminarGenero);
-            this.groupBox3.Controls.Add(this.buttonEditarGenero);
-            this.groupBox3.Controls.Add(this.buttonAgregarGenero);
+            this.groupBox3.Controls.Add(this.buttonEliminarAutor);
+            this.groupBox3.Controls.Add(this.buttonEditarAutor);
+            this.groupBox3.Controls.Add(this.buttonAgregarAutor);
             this.groupBox3.Location = new System.Drawing.Point(12, 138);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(776, 62);
-            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             // 
             // buttonAtras
@@ -113,56 +113,54 @@
             this.buttonAtras.Text = "Atrás";
             this.buttonAtras.UseVisualStyleBackColor = true;
             // 
-            // buttonEliminarGenero
+            // buttonEliminarAutor
             // 
-            this.buttonEliminarGenero.Location = new System.Drawing.Point(372, 19);
-            this.buttonEliminarGenero.Name = "buttonEliminarGenero";
-            this.buttonEliminarGenero.Size = new System.Drawing.Size(75, 23);
-            this.buttonEliminarGenero.TabIndex = 2;
-            this.buttonEliminarGenero.Text = "Eliminar";
-            this.buttonEliminarGenero.UseVisualStyleBackColor = true;
-            this.buttonEliminarGenero.Click += new System.EventHandler(this.buttonEliminarGenero_Click);
+            this.buttonEliminarAutor.Location = new System.Drawing.Point(372, 19);
+            this.buttonEliminarAutor.Name = "buttonEliminarAutor";
+            this.buttonEliminarAutor.Size = new System.Drawing.Size(75, 23);
+            this.buttonEliminarAutor.TabIndex = 2;
+            this.buttonEliminarAutor.Text = "Eliminar";
+            this.buttonEliminarAutor.UseVisualStyleBackColor = true;
+            this.buttonEliminarAutor.Click += new System.EventHandler(this.buttonEliminarAutor_Click);
             // 
-            // buttonEditarGenero
+            // buttonEditarAutor
             // 
-            this.buttonEditarGenero.Location = new System.Drawing.Point(291, 20);
-            this.buttonEditarGenero.Name = "buttonEditarGenero";
-            this.buttonEditarGenero.Size = new System.Drawing.Size(75, 23);
-            this.buttonEditarGenero.TabIndex = 1;
-            this.buttonEditarGenero.Text = "Editar";
-            this.buttonEditarGenero.UseVisualStyleBackColor = true;
-            this.buttonEditarGenero.Click += new System.EventHandler(this.buttonEditarGenero_Click);
+            this.buttonEditarAutor.Location = new System.Drawing.Point(291, 20);
+            this.buttonEditarAutor.Name = "buttonEditarAutor";
+            this.buttonEditarAutor.Size = new System.Drawing.Size(75, 23);
+            this.buttonEditarAutor.TabIndex = 1;
+            this.buttonEditarAutor.Text = "Editar";
+            this.buttonEditarAutor.UseVisualStyleBackColor = true;
             // 
-            // buttonAgregarGenero
+            // buttonAgregarAutor
             // 
-            this.buttonAgregarGenero.Location = new System.Drawing.Point(210, 20);
-            this.buttonAgregarGenero.Name = "buttonAgregarGenero";
-            this.buttonAgregarGenero.Size = new System.Drawing.Size(75, 23);
-            this.buttonAgregarGenero.TabIndex = 0;
-            this.buttonAgregarGenero.Text = "Agregar";
-            this.buttonAgregarGenero.UseVisualStyleBackColor = true;
-            this.buttonAgregarGenero.Click += new System.EventHandler(this.buttonAgregarGenero_Click);
+            this.buttonAgregarAutor.Location = new System.Drawing.Point(210, 20);
+            this.buttonAgregarAutor.Name = "buttonAgregarAutor";
+            this.buttonAgregarAutor.Size = new System.Drawing.Size(75, 23);
+            this.buttonAgregarAutor.TabIndex = 0;
+            this.buttonAgregarAutor.Text = "Agregar";
+            this.buttonAgregarAutor.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.dataGridViewGenero);
+            this.groupBox4.Controls.Add(this.dataGridViewAutor);
             this.groupBox4.Location = new System.Drawing.Point(12, 206);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(776, 237);
-            this.groupBox4.TabIndex = 7;
+            this.groupBox4.TabIndex = 15;
             this.groupBox4.TabStop = false;
             // 
-            // dataGridViewGenero
+            // dataGridViewAutor
             // 
-            this.dataGridViewGenero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGenero.Location = new System.Drawing.Point(6, 9);
-            this.dataGridViewGenero.MultiSelect = false;
-            this.dataGridViewGenero.Name = "dataGridViewGenero";
-            this.dataGridViewGenero.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewGenero.Size = new System.Drawing.Size(764, 222);
-            this.dataGridViewGenero.TabIndex = 0;
+            this.dataGridViewAutor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAutor.Location = new System.Drawing.Point(6, 9);
+            this.dataGridViewAutor.MultiSelect = false;
+            this.dataGridViewAutor.Name = "dataGridViewAutor";
+            this.dataGridViewAutor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewAutor.Size = new System.Drawing.Size(764, 222);
+            this.dataGridViewAutor.TabIndex = 0;
             // 
-            // FormGeneros
+            // FormAutores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -171,15 +169,15 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
-            this.Name = "FormGeneros";
-            this.Text = "FormGeneros";
+            this.Name = "FormAutores";
+            this.Text = "FormAutores";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenero)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAutor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -193,10 +191,10 @@
         private System.Windows.Forms.TextBox textBoxBuscar;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button buttonAtras;
-        private System.Windows.Forms.Button buttonEliminarGenero;
-        private System.Windows.Forms.Button buttonEditarGenero;
-        private System.Windows.Forms.Button buttonAgregarGenero;
+        private System.Windows.Forms.Button buttonEliminarAutor;
+        private System.Windows.Forms.Button buttonEditarAutor;
+        private System.Windows.Forms.Button buttonAgregarAutor;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataGridView dataGridViewGenero;
+        private System.Windows.Forms.DataGridView dataGridViewAutor;
     }
 }

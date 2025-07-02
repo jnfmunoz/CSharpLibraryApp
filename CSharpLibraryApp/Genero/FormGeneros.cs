@@ -24,34 +24,67 @@ namespace CSharpLibraryApp.Genero
             };
 
             genero = new LGenero(objetos);
-            genero.ListGenero();
+
+            this.Shown += async (s, e) =>
+            {
+                await genero.ListGeneroAsync();
+            };
 
         }
 
-        private void textBoxBuscar_TextChanged(object sender, EventArgs e)
+        private async void textBoxBuscar_TextChanged(object sender, EventArgs e)
         {
-            genero.SearchGenero(textBoxBuscar.Text.Trim());
+            await genero.SearchGeneroAsync(textBoxBuscar.Text.Trim());
         }
 
         private void buttonAgregarGenero_Click(object sender, EventArgs e)
         {
-            /* método que también podría globalizar */
+            /* método que también podría globalizar -> abrir y cerrar formularios */
             this.Hide();
 
             var form = new FormGenero();
-            form.FormClosed += (s, args) =>
+            form.FormClosed += async (s, args) =>
             {
                 this.Show();
                 textBoxBuscar.Text = "";
-                genero.ListGenero();
+                await genero.ListGeneroAsync();
             };
 
             form.Show();
         }
 
-        private void buttonEliminarGenero_Click(object sender, EventArgs e)
+        private async void buttonEliminarGenero_Click(object sender, EventArgs e)
         {
-            genero.DeleteGenero();
+            await genero.DeleteGeneroAsync();
         }
+
+        private void buttonEditarGenero_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewGenero.CurrentRow != null)
+            {
+                int id = Convert.ToInt32(dataGridViewGenero.CurrentRow.Cells[0].Value);
+                string nombre = dataGridViewGenero.CurrentRow.Cells[1].Value.ToString();
+
+                LGenero lgenero = new LGenero();
+
+                var form = new FormGenero();
+                form.SetDataForUpdate(id, nombre);
+
+                this.Hide();
+                form.FormClosed += async (s, args) =>
+                {
+                    this.Show();
+                    textBoxBuscar.Text = "";
+                    await genero.ListGeneroAsync();
+                };
+                form.Show();
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un género literario!");
+            }
+        }
+
+
     }
 }

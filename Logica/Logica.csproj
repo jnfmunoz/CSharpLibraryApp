@@ -97,6 +97,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LAutor.cs" />
     <Compile Include="LEditorial.cs" />
     <Compile Include="LGenero.cs" />
     <Compile Include="Library\Librarys.cs" />

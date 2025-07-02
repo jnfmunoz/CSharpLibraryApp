@@ -1,4 +1,5 @@
-﻿using Logica;
+﻿using Data;
+using Logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,15 +23,23 @@ namespace CSharpLibraryApp.Genero
             genero = new LGenero();
         }
 
-        private void buttonGuardar_Click(object sender, EventArgs e)
+        public void SetDataForUpdate(int id, string nombre)
+        {
+            textBoxNombre.Text = nombre;
+
+            genero.IdGenero = id;
+            genero.ChangeAction("update");
+        }
+
+        private async void buttonGuardar_Click(object sender, EventArgs e)
         {
             try
             {
                 string nombre = textBoxNombre.Text.Trim();
 
-                if (!string.IsNullOrWhiteSpace(nombre))
+                if (!string.IsNullOrEmpty(nombre))
                 {
-                    genero.SaveGenero(nombre);
+                    await genero.SaveGeneroAsync(nombre);
                     this.Close();                    
                 }
                 else
@@ -42,7 +51,8 @@ namespace CSharpLibraryApp.Genero
             {
                 MessageBox.Show("Error al agregar género: " + ex.Message);
             }
-
         }
+
+
     }
 }
