@@ -155,7 +155,7 @@ namespace Logica
             }
         }
 
-        public void DeleteEditorial()
+        private void DeleteEditorial()
         {
             GetEditorialSelected();
 

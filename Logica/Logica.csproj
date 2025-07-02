@@ -98,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LEditorial.cs" />
+    <Compile Include="LGenero.cs" />
     <Compile Include="Library\Librarys.cs" />
     <Compile Include="LPais.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -44,11 +44,6 @@ namespace CSharpLibraryApp
             form.Show(); 
         }
 
-        private void RefreshEditorial(object sender, FormClosedEventArgs e)
-        {
-            editorial.ListEditorial();
-        }
-
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
             editorial.DeleteEditorial();

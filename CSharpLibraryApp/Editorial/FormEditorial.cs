@@ -64,8 +64,6 @@ namespace CSharpLibraryApp
                     MessageBox.Show("Selecciona un país válido.");
                 }
 
-
-
             }
 
             catch (Exception ex)

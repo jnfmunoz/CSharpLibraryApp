@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CSharpLibraryApp
+namespace CSharpLibraryApp.Genero
 {
     internal static class Program
     {
@@ -16,7 +16,8 @@ namespace CSharpLibraryApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormEditoriales());
+            Application.Run(new FormGeneros());
+            //Application.Run(new FormEditoriales());
         }
     }
 }
