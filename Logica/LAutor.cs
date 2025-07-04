@@ -98,6 +98,8 @@ namespace Logica
             }
         }
 
+
+
         private void GetAutorSelected()
         {
             if(_dataGridView.CurrentRow != null)
@@ -135,6 +137,10 @@ namespace Logica
 
         }
 
+        public void ChangeAction(string action)
+        {
+            _action = action;
+        }
 
     }
 }
