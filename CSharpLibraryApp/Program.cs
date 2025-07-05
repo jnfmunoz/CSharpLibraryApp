@@ -16,7 +16,7 @@ namespace CSharpLibraryApp.Autor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormGeneros());
+            //Application.Run(new FormGeneros());
             Application.Run(new FormAutores());
             //Application.Run(new FormEditoriales());
         }

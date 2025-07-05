@@ -1,6 +1,8 @@
 ﻿using Data;
 using LinqToDB;
+using LinqToDB.SqlQuery;
 using Logica.Library;
+using Org.BouncyCastle.Tls.Crypto.Impl.BC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -98,8 +100,6 @@ namespace Logica
             }
         }
 
-
-
         private void GetAutorSelected()
         {
             if(_dataGridView.CurrentRow != null)
@@ -109,6 +109,48 @@ namespace Logica
             else
             {
                 _idAutor = 0;
+            }
+        }
+
+        public async Task SaveAutorAsync(string nombre, DateTime fecha_nacimiento, int idPais)
+        {
+            using (var db = new Conexion())
+            {              
+                var existeDuplicado = await db.GetTable<Autor>()
+                    .AnyAsync(a => a.idAUTOR == _idAutor && a.nombre == nombre);
+
+                if (existeDuplicado)
+                {
+                    MessageBox.Show("Ya existe un autor con ese nombre.");
+                    return;
+                }
+
+                await db.BeginTransactionAsync();
+
+                try
+                {
+                    switch (_action)
+                    {
+                        case "insert":
+                            await db.GetTable<Autor>()
+                                .Value(a => a.nombre, nombre)
+                                .Value(a => a.fecha_nacimiento, fecha_nacimiento)
+                                .Value(a => a.PAIS_idPAIS, idPais)
+                                .InsertAsync();
+                            break;
+                        case "update":
+                            await db.GetTable<Autor>()
+                                .Where(a => a.idAUTOR== _idAutor)
+                                .Set(a => a.nombre, nombre)
+                                .Set(a => a.fecha_nacimiento, fecha_nacimiento)
+                                .Set(a => a.PAIS_idPAIS, idPais)
+                                .UpdateAsync();
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                }
             }
         }
 
