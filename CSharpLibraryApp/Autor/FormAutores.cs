@@ -1,4 +1,5 @@
-﻿using Logica;
+﻿using CSharpLibraryApp.Autor;
+using Logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,6 +41,21 @@ namespace CSharpLibraryApp.Autor
         private async void buttonEliminarAutor_Click(object sender, EventArgs e)
         {
             await autor.DeleteAutorAsync();
+        }
+
+        private void buttonAgregarAutor_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            var form = new FormAutor();
+            form.FormClosed += async (s, args) =>
+            {
+                this.Show();
+                textBoxBuscar.Text = "";
+                await autor.ListAutorAsync();
+            };
+
+            form.Show();
         }
     }
 }

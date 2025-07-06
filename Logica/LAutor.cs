@@ -147,9 +147,15 @@ namespace Logica
                                 .UpdateAsync();
                             break;
                     }
+
+                    await db.CommitTransactionAsync();
+                    MessageBox.Show("Autor guardado exitosamente.");
+
                 }
                 catch (Exception ex)
                 {
+                    await db.RollbackTransactionAsync();
+                    MessageBox.Show("Error al guardar Autor: " + ex.Message);
                 }
             }
         }

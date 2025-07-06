@@ -151,6 +151,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Autor\FormAutor.resx">
+      <DependentUpon>FormAutor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Autor\FormAutores.resx">
       <DependentUpon>FormAutores.cs</DependentUpon>
     </EmbeddedResource>

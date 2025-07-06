@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,28 @@ namespace CSharpLibraryApp.Autor
         public FormAutor()
         {
             InitializeComponent();
+        }
+
+        private void LoadComboPaises()
+        {
+            LPais lPais = new LPais();
+            var getPaises = lPais.GetPaises();
+
+            comboBoxPais.DataSource = getPaises;
+            comboBoxPais.DisplayMember = "nombre";
+            comboBoxPais.ValueMember = "idPAIS";
+        }
+
+        private void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // aqui quede
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Error al agregar género: " + ex.Message);
+            }
         }
     }
 }

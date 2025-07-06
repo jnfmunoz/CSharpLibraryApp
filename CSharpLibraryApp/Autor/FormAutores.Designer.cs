@@ -140,6 +140,7 @@
             this.buttonAgregarAutor.TabIndex = 0;
             this.buttonAgregarAutor.Text = "Agregar";
             this.buttonAgregarAutor.UseVisualStyleBackColor = true;
+            this.buttonAgregarAutor.Click += new System.EventHandler(this.buttonAgregarAutor_Click);
             // 
             // groupBox4
             // 
