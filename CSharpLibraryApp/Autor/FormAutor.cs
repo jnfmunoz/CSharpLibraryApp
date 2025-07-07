@@ -13,9 +13,15 @@ namespace CSharpLibraryApp.Autor
 {
     public partial class FormAutor : Form
     {
+        private LAutor autor;
+
         public FormAutor()
         {
             InitializeComponent();
+            LoadComboPaises();
+
+            autor = new LAutor();
+
         }
 
         private void LoadComboPaises()
@@ -28,15 +34,41 @@ namespace CSharpLibraryApp.Autor
             comboBoxPais.ValueMember = "idPAIS";
         }
 
-        private void buttonGuardar_Click(object sender, EventArgs e)
+        public void SetDataForUpdate(int id, string nombre, DateTime fechaNacimiento, int idPais)
+        {
+            textBoxNombre.Text = nombre;
+            dateTimePickerFechaNacimiento.Value = fechaNacimiento;
+            comboBoxPais.SelectedValue = idPais;
+
+            autor.IdAutor = id;
+            autor.ChangeAction("update");
+
+        }
+
+        private async void buttonGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                // aqui quede
+                string nombre = textBoxNombre.Text.Trim();
+                DateTime fechaNacimiento = dateTimePickerFechaNacimiento.Value;
+
+                if (comboBoxPais.SelectedValue != null)
+                {                    
+                    int idPais = (int)comboBoxPais.SelectedValue;
+
+                    await autor.SaveAutorAsync(nombre, fechaNacimiento, idPais);
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona un país válido!");
+                }
+
             }
             catch (Exception ex) 
             {
-                MessageBox.Show("Error al agregar género: " + ex.Message);
+                MessageBox.Show("Error al agregar autor: " + ex.Message);
             }
         }
     }

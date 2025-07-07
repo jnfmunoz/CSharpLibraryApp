@@ -57,5 +57,38 @@ namespace CSharpLibraryApp.Autor
 
             form.Show();
         }
+
+        private void buttonEditarAutor_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewAutor.CurrentRow != null)
+            {
+                int id = Convert.ToInt32(dataGridViewAutor.CurrentRow.Cells[0].Value);
+                string nombre = dataGridViewAutor.CurrentRow.Cells[1].Value.ToString();
+                string pais = dataGridViewAutor.CurrentRow.Cells[2].Value.ToString();
+                DateTime fechaNacimiento = Convert.ToDateTime(dataGridViewAutor.CurrentRow.Cells[3].Value);
+
+                LPais lPais = new LPais();
+                int idPais = lPais.GetIdPaisFromName(pais);
+
+                LAutor lAutor = new LAutor();
+
+                var form = new FormAutor();
+                form.SetDataForUpdate(id, nombre, fechaNacimiento, idPais);
+
+                this.Hide();
+                form.FormClosed += async (s, args) =>
+                {
+                    this.Show();
+                    textBoxBuscar.Text = ""; 
+                    await autor.ListAutorAsync();
+                };
+                form.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un autor!");
+            }
+        }
     }
 }

@@ -131,6 +131,7 @@
             this.buttonEditarAutor.TabIndex = 1;
             this.buttonEditarAutor.Text = "Editar";
             this.buttonEditarAutor.UseVisualStyleBackColor = true;
+            this.buttonEditarAutor.Click += new System.EventHandler(this.buttonEditarAutor_Click);
             // 
             // buttonAgregarAutor
             // 
