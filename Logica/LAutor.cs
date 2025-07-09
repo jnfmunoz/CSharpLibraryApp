@@ -116,15 +116,6 @@ namespace Logica
         {
             using (var db = new Conexion())
             {              
-                var existeDuplicado = await db.GetTable<Autor>()
-                    .AnyAsync(a => a.idAUTOR == _idAutor && a.nombre == nombre);
-
-                if (existeDuplicado)
-                {
-                    MessageBox.Show("Ya existe un autor con ese nombre.");
-                    return;
-                }
-
                 await db.BeginTransactionAsync();
 
                 try
