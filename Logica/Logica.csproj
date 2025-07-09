@@ -101,6 +101,7 @@
     <Compile Include="LEditorial.cs" />
     <Compile Include="LGenero.cs" />
     <Compile Include="Library\Librarys.cs" />
+    <Compile Include="LLibro.cs" />
     <Compile Include="LPais.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

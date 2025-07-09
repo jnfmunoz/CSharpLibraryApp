@@ -14,6 +14,8 @@ namespace Data
         public ITable<Editorial> _Editorial => this.GetTable<Editorial>();
         public ITable<Genero> _Genero => this.GetTable<Genero>();
         public ITable<Autor> _Autor => this.GetTable<Autor>();
+        public ITable<Libro> _Libro => this.GetTable<Libro>();
+        public ITable<LibroAutor> _LibroAutor => this.GetTable<LibroAutor>();
 
     }
 }

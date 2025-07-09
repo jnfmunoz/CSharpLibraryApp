@@ -180,7 +180,5 @@ namespace Logica
             _action = action;
         }
 
-
-
     }
 }

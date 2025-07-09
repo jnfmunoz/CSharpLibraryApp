@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CSharpLibraryApp
+namespace CSharpLibraryApp.Libro
 {
-    public partial class FormLibros : Form
+    public partial class FormLibro : Form
     {
-        public FormLibros()
+        public FormLibro()
         {
             InitializeComponent();
         }

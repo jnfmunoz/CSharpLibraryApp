@@ -131,12 +131,6 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLibros.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLibros.Designer.cs">
-      <DependentUpon>FormLibros.cs</DependentUpon>
-    </Compile>
     <Compile Include="Genero\FormGenero.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +142,18 @@
     </Compile>
     <Compile Include="Genero\FormGeneros.Designer.cs">
       <DependentUpon>FormGeneros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Libro\FormLibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Libro\FormLibro.Designer.cs">
+      <DependentUpon>FormLibro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Libro\FormLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Libro\FormLibros.Designer.cs">
+      <DependentUpon>FormLibros.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -171,6 +177,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Genero\FormGeneros.resx">
       <DependentUpon>FormGeneros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Libro\FormLibro.resx">
+      <DependentUpon>FormLibro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Libro\FormLibros.resx">
+      <DependentUpon>FormLibros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
