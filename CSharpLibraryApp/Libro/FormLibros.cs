@@ -1,4 +1,5 @@
-﻿using Logica;
+﻿using CSharpLibraryApp.Libro;
+using Logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,26 @@ namespace CSharpLibraryApp.Libro
                 await libro.ListLibroAsync();
             };
 
+        }
+
+        private async void textBoxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            await libro.SearchLibroAsync(textBoxBuscar.Text.Trim());
+        }
+
+        private void buttonAgregarLibro_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            var form = new FormLibro();
+            form.FormClosed += async (s, args) =>
+            {
+                this.Show();
+                textBoxBuscar.Text = "";
+                await libro.ListLibroAsync();
+            };
+
+            form.Show();
         }
     }
 }

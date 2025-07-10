@@ -97,6 +97,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\LibroDTO.cs" />
     <Compile Include="LAutor.cs" />
     <Compile Include="LEditorial.cs" />
     <Compile Include="LGenero.cs" />

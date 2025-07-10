@@ -99,6 +99,7 @@
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(118, 20);
             this.textBoxBuscar.TabIndex = 0;
+            this.textBoxBuscar.TextChanged += new System.EventHandler(this.textBoxBuscar_TextChanged);
             // 
             // groupBox3
             // 
@@ -138,6 +139,7 @@
             this.buttonAgregarLibro.TabIndex = 0;
             this.buttonAgregarLibro.Text = "Agregar";
             this.buttonAgregarLibro.UseVisualStyleBackColor = true;
+            this.buttonAgregarLibro.Click += new System.EventHandler(this.buttonAgregarLibro_Click);
             // 
             // groupBox4
             // 
