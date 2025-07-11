@@ -30,7 +30,6 @@ namespace CSharpLibraryApp.Libro
             {
                 await libro.ListLibroAsync();
             };
-
         }
 
         private async void textBoxBuscar_TextChanged(object sender, EventArgs e)
