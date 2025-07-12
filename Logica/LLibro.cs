@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica.DTOs;
 using Org.BouncyCastle.Crypto;
+using LinqToDB.DataProvider.DB2;
 
 namespace Logica
 {
@@ -146,9 +147,38 @@ namespace Logica
             }
         }
 
-        public async Task SaveLibroAsync()
+        public async Task SaveLibroAsync(string titulo, string isbn, int anio_publicacion, string sinopsis, int idEDITORIAL, int idGENERO)
         {
-            // COMMIT 19
+            using (var db = new Conexion())
+            {
+                await db.BeginTransactionAsync();
+
+                try
+                {
+                    switch (_action)
+                    {
+                        case "insert":
+                            await db.GetTable<Libro>()
+                                .Value(l => l.titulo, titulo)
+                                .Value(l => l.isbn, isbn)
+                                .Value(l => l.anio_publicacion, anio_publicacion)
+                                .Value(l => l.sinopsis, sinopsis)
+                                .Value(l => l.EDITORIAL_idEDITORIAL, idEDITORIAL)
+                                .Value(l => l.GENERO_idGENERO, idGENERO)
+                                .InsertAsync();
+                            break;
+                    }
+
+                    await db.CommitTransactionAsync();
+                    MessageBox.Show("Libro guardado exitosamente.");
+
+                }
+                catch (Exception ex)
+                {
+                    await db.RollbackTransactionAsync();
+                    MessageBox.Show("Error al guardar Libro: " + ex.Message);
+                }
+            }
         }
 
     }
