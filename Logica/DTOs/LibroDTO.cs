@@ -16,5 +16,6 @@ namespace Logica.DTOs
             public string Editorial { get; set; }
             public string Genero { get; set; }
             public string Autor { get; set; }        
+
     }
 }

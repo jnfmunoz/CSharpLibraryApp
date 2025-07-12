@@ -181,5 +181,12 @@ namespace Logica
             _action = action;
         }
 
+        public List<Editorial> GetEditoriales()
+        {
+            using (var db = new Conexion())
+            {
+                return db.GetTable<Editorial>().ToList();
+            }
+        }
     }
 }

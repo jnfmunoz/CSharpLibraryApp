@@ -31,6 +31,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBoxGenero = new System.Windows.Forms.ComboBox();
+            this.labelGenero = new System.Windows.Forms.Label();
+            this.comboBoxEditorial = new System.Windows.Forms.ComboBox();
+            this.labelEditorial = new System.Windows.Forms.Label();
+            this.textBoxSinopsis = new System.Windows.Forms.TextBox();
+            this.labelSinopsis = new System.Windows.Forms.Label();
+            this.labelAnioPublicacion = new System.Windows.Forms.Label();
             this.textBoxAnioPublicacion = new System.Windows.Forms.TextBox();
             this.textBoxIsbn = new System.Windows.Forms.TextBox();
             this.labelIsbn = new System.Windows.Forms.Label();
@@ -40,13 +47,6 @@
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonLimpiar = new System.Windows.Forms.Button();
-            this.labelAnioPublicacion = new System.Windows.Forms.Label();
-            this.labelSinopsis = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelEditorial = new System.Windows.Forms.Label();
-            this.comboBoxEditorial = new System.Windows.Forms.ComboBox();
-            this.labelGenero = new System.Windows.Forms.Label();
-            this.comboBoxGenero = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -76,7 +76,7 @@
             this.groupBox2.Controls.Add(this.labelGenero);
             this.groupBox2.Controls.Add(this.comboBoxEditorial);
             this.groupBox2.Controls.Add(this.labelEditorial);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.textBoxSinopsis);
             this.groupBox2.Controls.Add(this.labelSinopsis);
             this.groupBox2.Controls.Add(this.labelAnioPublicacion);
             this.groupBox2.Controls.Add(this.textBoxAnioPublicacion);
@@ -89,6 +89,66 @@
             this.groupBox2.Size = new System.Drawing.Size(776, 261);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
+            // 
+            // comboBoxGenero
+            // 
+            this.comboBoxGenero.FormattingEnabled = true;
+            this.comboBoxGenero.Location = new System.Drawing.Point(332, 186);
+            this.comboBoxGenero.Name = "comboBoxGenero";
+            this.comboBoxGenero.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxGenero.TabIndex = 13;
+            // 
+            // labelGenero
+            // 
+            this.labelGenero.AutoSize = true;
+            this.labelGenero.Location = new System.Drawing.Point(285, 194);
+            this.labelGenero.Name = "labelGenero";
+            this.labelGenero.Size = new System.Drawing.Size(42, 13);
+            this.labelGenero.TabIndex = 12;
+            this.labelGenero.Text = "Género";
+            // 
+            // comboBoxEditorial
+            // 
+            this.comboBoxEditorial.FormattingEnabled = true;
+            this.comboBoxEditorial.Location = new System.Drawing.Point(332, 158);
+            this.comboBoxEditorial.Name = "comboBoxEditorial";
+            this.comboBoxEditorial.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEditorial.TabIndex = 11;
+            // 
+            // labelEditorial
+            // 
+            this.labelEditorial.AutoSize = true;
+            this.labelEditorial.Location = new System.Drawing.Point(281, 162);
+            this.labelEditorial.Name = "labelEditorial";
+            this.labelEditorial.Size = new System.Drawing.Size(44, 13);
+            this.labelEditorial.TabIndex = 10;
+            this.labelEditorial.Text = "Editorial";
+            // 
+            // textBoxSinopsis
+            // 
+            this.textBoxSinopsis.Location = new System.Drawing.Point(332, 103);
+            this.textBoxSinopsis.Multiline = true;
+            this.textBoxSinopsis.Name = "textBoxSinopsis";
+            this.textBoxSinopsis.Size = new System.Drawing.Size(142, 49);
+            this.textBoxSinopsis.TabIndex = 9;
+            // 
+            // labelSinopsis
+            // 
+            this.labelSinopsis.AutoSize = true;
+            this.labelSinopsis.Location = new System.Drawing.Point(271, 106);
+            this.labelSinopsis.Name = "labelSinopsis";
+            this.labelSinopsis.Size = new System.Drawing.Size(46, 13);
+            this.labelSinopsis.TabIndex = 8;
+            this.labelSinopsis.Text = "Sinopsis";
+            // 
+            // labelAnioPublicacion
+            // 
+            this.labelAnioPublicacion.AutoSize = true;
+            this.labelAnioPublicacion.Location = new System.Drawing.Point(227, 80);
+            this.labelAnioPublicacion.Name = "labelAnioPublicacion";
+            this.labelAnioPublicacion.Size = new System.Drawing.Size(99, 13);
+            this.labelAnioPublicacion.TabIndex = 7;
+            this.labelAnioPublicacion.Text = "Año de Publicación";
             // 
             // textBoxAnioPublicacion
             // 
@@ -148,6 +208,7 @@
             this.buttonGuardar.TabIndex = 3;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // buttonCancelar
             // 
@@ -166,66 +227,6 @@
             this.buttonLimpiar.TabIndex = 1;
             this.buttonLimpiar.Text = "Limpiar";
             this.buttonLimpiar.UseVisualStyleBackColor = true;
-            // 
-            // labelAnioPublicacion
-            // 
-            this.labelAnioPublicacion.AutoSize = true;
-            this.labelAnioPublicacion.Location = new System.Drawing.Point(227, 80);
-            this.labelAnioPublicacion.Name = "labelAnioPublicacion";
-            this.labelAnioPublicacion.Size = new System.Drawing.Size(99, 13);
-            this.labelAnioPublicacion.TabIndex = 7;
-            this.labelAnioPublicacion.Text = "Año de Publicación";
-            // 
-            // labelSinopsis
-            // 
-            this.labelSinopsis.AutoSize = true;
-            this.labelSinopsis.Location = new System.Drawing.Point(271, 106);
-            this.labelSinopsis.Name = "labelSinopsis";
-            this.labelSinopsis.Size = new System.Drawing.Size(46, 13);
-            this.labelSinopsis.TabIndex = 8;
-            this.labelSinopsis.Text = "Sinopsis";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(332, 103);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 49);
-            this.textBox1.TabIndex = 9;
-            // 
-            // labelEditorial
-            // 
-            this.labelEditorial.AutoSize = true;
-            this.labelEditorial.Location = new System.Drawing.Point(281, 162);
-            this.labelEditorial.Name = "labelEditorial";
-            this.labelEditorial.Size = new System.Drawing.Size(44, 13);
-            this.labelEditorial.TabIndex = 10;
-            this.labelEditorial.Text = "Editorial";
-            // 
-            // comboBoxEditorial
-            // 
-            this.comboBoxEditorial.FormattingEnabled = true;
-            this.comboBoxEditorial.Location = new System.Drawing.Point(332, 158);
-            this.comboBoxEditorial.Name = "comboBoxEditorial";
-            this.comboBoxEditorial.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxEditorial.TabIndex = 11;
-            // 
-            // labelGenero
-            // 
-            this.labelGenero.AutoSize = true;
-            this.labelGenero.Location = new System.Drawing.Point(285, 194);
-            this.labelGenero.Name = "labelGenero";
-            this.labelGenero.Size = new System.Drawing.Size(42, 13);
-            this.labelGenero.TabIndex = 12;
-            this.labelGenero.Text = "Género";
-            // 
-            // comboBoxGenero
-            // 
-            this.comboBoxGenero.FormattingEnabled = true;
-            this.comboBoxGenero.Location = new System.Drawing.Point(332, 186);
-            this.comboBoxGenero.Name = "comboBoxGenero";
-            this.comboBoxGenero.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxGenero.TabIndex = 13;
             // 
             // FormLibro
             // 
@@ -262,7 +263,7 @@
         private System.Windows.Forms.Label labelIsbn;
         private System.Windows.Forms.Label labelAnioPublicacion;
         private System.Windows.Forms.Label labelSinopsis;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxSinopsis;
         private System.Windows.Forms.Label labelEditorial;
         private System.Windows.Forms.ComboBox comboBoxGenero;
         private System.Windows.Forms.Label labelGenero;

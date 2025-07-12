@@ -180,5 +180,13 @@ namespace Logica
             _action = action;
         }
 
+        public List<Genero> GetGeneros()
+        {
+            using (var db = new Conexion())
+            {
+                return db.GetTable<Genero>().ToList();
+            }
+        }
+
     }
 }

@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Logica.DTOs;
 using Org.BouncyCastle.Crypto;
 using LinqToDB.DataProvider.DB2;
+using Logica.ViewModels;
 
 namespace Logica
 {
@@ -34,6 +35,7 @@ namespace Logica
         private async Task<List<LibroDTO>> GetLibrosAsync(Conexion db)
         {
             var rawData = await (from l in db.GetTable<Libro>()
+                                 orderby l.idLIBRO
                                  join e in db.GetTable<Editorial>()
                                     on l.EDITORIAL_idEDITORIAL equals e.idEDITORIAL
                                  join g in db.GetTable<Genero>()
@@ -91,7 +93,9 @@ namespace Logica
                     var list = await GetLibrosAsync(db);
 
                     _dataGridView.DataSource = list;
+                    _dataGridView.Columns["Titulo"].HeaderText = "Título";
                     _dataGridView.Columns["AnioPublicacion"].HeaderText = "Año de publicación";
+                    _dataGridView.Columns["Genero"].HeaderText = "Género";
 
                     foreach (DataGridViewColumn col in _dataGridView.Columns)
                     {
@@ -130,9 +134,9 @@ namespace Logica
                         }
 
                         _dataGridView.DataSource = libros;
-                        _dataGridView.Columns["Titulo"].HeaderText = "Año de publicación";
+                        _dataGridView.Columns["Titulo"].HeaderText = "Título";
                         _dataGridView.Columns["AnioPublicacion"].HeaderText = "Año de publicación";
-                        _dataGridView.Columns["AnioPublicacion"].HeaderText = "Año de publicación";
+                        _dataGridView.Columns["Genero"].HeaderText = "Género";
 
                         foreach (DataGridViewColumn col in _dataGridView.Columns)
                         {
@@ -146,8 +150,8 @@ namespace Logica
                 MessageBox.Show("Error al buscar libro: " + ex.Message);
             }
         }
-
-        public async Task SaveLibroAsync(string titulo, string isbn, int anio_publicacion, string sinopsis, int idEDITORIAL, int idGENERO)
+       
+        public async Task SaveLibroAsync(LibroInputModel input)
         {
             using (var db = new Conexion())
             {
@@ -159,19 +163,30 @@ namespace Logica
                     {
                         case "insert":
                             await db.GetTable<Libro>()
-                                .Value(l => l.titulo, titulo)
-                                .Value(l => l.isbn, isbn)
-                                .Value(l => l.anio_publicacion, anio_publicacion)
-                                .Value(l => l.sinopsis, sinopsis)
-                                .Value(l => l.EDITORIAL_idEDITORIAL, idEDITORIAL)
-                                .Value(l => l.GENERO_idGENERO, idGENERO)
+                                .Value(l => l.titulo, input.Titulo)
+                                .Value(l => l.isbn, input.ISBN)
+                                .Value(l => l.anio_publicacion, input.AnioPublicacion)
+                                .Value(l => l.sinopsis, input.Sinopsis)
+                                .Value(l => l.EDITORIAL_idEDITORIAL, input.EDITORIAL_idEDITORIAL)
+                                .Value(l => l.GENERO_idGENERO, input.GENERO_idGENERO)
                                 .InsertAsync();
+                            break;
+
+                        case "update":
+                            await db.GetTable<Libro>()
+                                    .Where(l => l.idLIBRO == _idLibro)
+                                    .Set(l => l.titulo, input.Titulo)
+                                    .Set(l => l.isbn, input.ISBN)
+                                    .Set(l => l.anio_publicacion, input.AnioPublicacion)
+                                    .Set(l => l.sinopsis, input.Sinopsis)
+                                    .Set(l => l.EDITORIAL_idEDITORIAL, input.EDITORIAL_idEDITORIAL)
+                                    .Set(l => l.GENERO_idGENERO, input.GENERO_idGENERO)
+                                    .UpdateAsync();
                             break;
                     }
 
                     await db.CommitTransactionAsync();
                     MessageBox.Show("Libro guardado exitosamente.");
-
                 }
                 catch (Exception ex)
                 {
@@ -181,5 +196,9 @@ namespace Logica
             }
         }
 
+        public void ChangeAction(string action)
+        {
+            _action = action;
+        }
     }
 }
