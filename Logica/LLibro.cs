@@ -1,15 +1,16 @@
 ﻿using Data;
 using LinqToDB;
+using LinqToDB.DataProvider.DB2;
+using Logica.DTOs;
 using Logica.Library;
+using Logica.ViewModels;
+using Org.BouncyCastle.Crypto;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Logica.DTOs;
-using Org.BouncyCastle.Crypto;
-using LinqToDB.DataProvider.DB2;
-using Logica.ViewModels;
 
 namespace Logica
 {
@@ -193,6 +194,14 @@ namespace Logica
                     await db.RollbackTransactionAsync();
                     MessageBox.Show("Error al guardar Libro: " + ex.Message);
                 }
+            }
+        }
+
+        public Libro GetLibro(int idLibro)
+        {
+            using (var db = new Conexion())
+            {
+                return db._Libro.FirstOrDefault(l => l.idLIBRO == idLibro);
             }
         }
 

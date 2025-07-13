@@ -1,5 +1,7 @@
 ﻿using Data;
+using LinqToDB.Data.RetryPolicy;
 using Logica;
+using Logica.Mappers;
 using Logica.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,9 @@ namespace CSharpLibraryApp.Libro
     public partial class FormLibro : Form
     {
         private LLibro libro;
+        private LibroInputModel _inputModel = new LibroInputModel();
+        private int _idLibro = 0;
+
         public FormLibro()
         {
             InitializeComponent();
@@ -23,6 +28,37 @@ namespace CSharpLibraryApp.Libro
             LoadComboGenero();
 
             libro = new LLibro();
+        }
+
+        public FormLibro(int idLibro) : this()
+        {
+            _idLibro = idLibro;
+        }
+
+        private void FormLibro_Load(object  sender, EventArgs e)
+        {
+            if(_idLibro > 0)
+            {
+                var libroEntity = libro.GetLibro(_idLibro);
+
+                if(libroEntity != null)
+                {
+                    _inputModel = LibroMapper.ToViewModel(libroEntity);
+                    MapToUI(_inputModel);
+
+                    libro.idLibro = _idLibro;
+                    libro.ChangeAction("update");
+                }
+                else
+                {
+                    MessageBox.Show("Libro no encontrado.");
+                    this.Close();
+                }
+            }
+            else
+            {
+                libro.ChangeAction("insert");
+            }
         }
 
         private void LoadComboEditorial()
@@ -43,44 +79,48 @@ namespace CSharpLibraryApp.Libro
             comboBoxGenero.ValueMember = "idGENERO";
         }
 
+        private void MapToUI(LibroInputModel model)
+        {
+            textBoxTitulo.Text = model.Titulo ?? "";
+            textBoxIsbn.Text = model.ISBN ?? "";
+            textBoxAnioPublicacion.Text = model.AnioPublicacion.ToString() ?? "";
+            textBoxSinopsis.Text = model.Sinopsis ?? "";
+            comboBoxEditorial.SelectedValue = model.EDITORIAL_idEDITORIAL;
+            comboBoxGenero.SelectedValue = model.GENERO_idGENERO;
+        }
+
+        private void MapFromUI(LibroInputModel model)
+        {
+            model.Titulo = textBoxTitulo.Text.Trim();
+            model.ISBN = textBoxIsbn.Text.Trim();
+            model.AnioPublicacion = Convert.ToInt32(textBoxAnioPublicacion.Text.Trim());
+            model.Sinopsis = textBoxSinopsis.Text.Trim();
+            model.EDITORIAL_idEDITORIAL = Convert.ToInt32(comboBoxEditorial.SelectedValue);
+            model.GENERO_idGENERO = Convert.ToInt32(comboBoxGenero.SelectedValue);
+            
+        }
+
         private async void buttonGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                string titulo = textBoxTitulo.Text.Trim();
-                string isbn = textBoxIsbn.Text.Trim();
-                int anioPublicacion = Convert.ToInt32(textBoxAnioPublicacion.Text.Trim());
-                string sinopsis = textBoxSinopsis.Text.Trim();
+                MapFromUI(_inputModel);
 
-
-                if (comboBoxEditorial.SelectedValue != null && comboBoxGenero.SelectedValue != null)
+                if (_inputModel.EDITORIAL_idEDITORIAL == 0 || _inputModel.GENERO_idGENERO == 0)
                 {
-                    int idEditorial = (int)comboBoxEditorial.SelectedValue;
-                    int idGenero = (int)comboBoxGenero.SelectedValue;
-
-                    var input = new LibroInputModel
-                    {
-                        Titulo = titulo,
-                        ISBN = isbn,
-                        AnioPublicacion = anioPublicacion,
-                        Sinopsis = sinopsis,
-                        EDITORIAL_idEDITORIAL = idEditorial,
-                        GENERO_idGENERO = idGenero
-                    };
-
-                    await libro.SaveLibroAsync(input);
-                    this.Close();
+                    MessageBox.Show("Selecciona un editorial y un género válidos.");
+                    return;
                 }
-                else
-                {
-                    MessageBox.Show("Selecciona un país válido.");
-                }
+
+                await libro.SaveLibroAsync(_inputModel);
+
+                this.Close();
 
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar libro: " + ex.Message);
+                MessageBox.Show("Error al guardar libro: " + ex.Message);
             }
-        }
+        }     
     }
 }
