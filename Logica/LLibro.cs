@@ -8,6 +8,7 @@ using Org.BouncyCastle.Crypto;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -199,7 +200,26 @@ namespace Logica
 
         public async Task DeleteLibroAsync()
         {
+            GetLibroSelected();
 
+            if (_idLibro.Equals(0))
+            {
+                MessageBox.Show("Seleccione un libro!");
+            }
+            else
+            {
+                if (MessageBox.Show("Estás seguro de eliminar el Libro?",
+                    "Eliminar Editorial",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    using (var db = new Conexion())
+                    {
+                        await _Libro.Where(l => l.idLIBRO.Equals(_idLibro)).DeleteAsync();
+                    }
+                }
+
+                await ListLibroAsync();
+            }
         }
 
         public Libro GetLibro(int idLibro)
@@ -214,7 +234,11 @@ namespace Logica
         {
             if (_dataGridView.CurrentRow != null) 
             {
-                
+                _idLibro = Convert.ToInt32(_dataGridView.CurrentRow.Cells[0].Value);
+            }
+            else
+            {
+                _idLibro = 0;
             }
         }
 

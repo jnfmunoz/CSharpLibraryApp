@@ -75,6 +75,11 @@ namespace CSharpLibraryApp.Libro
                 MessageBox.Show("Selecciona un libro de la tabla para editar.");
             }
         }
+
+        private async void buttonEliminarLibro_Click(object sender, EventArgs e)
+        {
+            await libro.DeleteLibroAsync();
+        }
     }
 }
  

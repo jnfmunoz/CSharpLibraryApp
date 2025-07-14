@@ -131,6 +131,7 @@
             this.buttonEliminarLibro.TabIndex = 2;
             this.buttonEliminarLibro.Text = "Eliminar";
             this.buttonEliminarLibro.UseVisualStyleBackColor = true;
+            this.buttonEliminarLibro.Click += new System.EventHandler(this.buttonEliminarLibro_Click);
             // 
             // buttonAgregarLibro
             // 
