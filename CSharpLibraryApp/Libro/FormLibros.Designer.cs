@@ -55,6 +55,7 @@
             this.buttonEditarLibro.TabIndex = 1;
             this.buttonEditarLibro.Text = "Editar";
             this.buttonEditarLibro.UseVisualStyleBackColor = true;
+            this.buttonEditarLibro.Click += new System.EventHandler(this.buttonEditarLibro_Click);
             // 
             // groupBox1
             // 

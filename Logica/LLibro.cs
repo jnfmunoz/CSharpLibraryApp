@@ -197,11 +197,24 @@ namespace Logica
             }
         }
 
+        public async Task DeleteLibroAsync()
+        {
+
+        }
+
         public Libro GetLibro(int idLibro)
         {
             using (var db = new Conexion())
             {
                 return db._Libro.FirstOrDefault(l => l.idLIBRO == idLibro);
+            }
+        }
+
+        public void GetLibroSelected()
+        {
+            if (_dataGridView.CurrentRow != null) 
+            {
+                
             }
         }
 

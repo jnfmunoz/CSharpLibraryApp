@@ -24,6 +24,7 @@ namespace CSharpLibraryApp.Libro
         public FormLibro()
         {
             InitializeComponent();
+            this.Load += FormLibro_Load;
             LoadComboEditorial();
             LoadComboGenero();
 

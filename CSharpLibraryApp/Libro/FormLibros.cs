@@ -51,6 +51,30 @@ namespace CSharpLibraryApp.Libro
 
             form.Show();
         }
+
+        private void buttonEditarLibro_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewLibro.CurrentRow != null)
+            {
+                int idLibro = Convert.ToInt32(dataGridViewLibro.CurrentRow.Cells[0].Value);
+                var form = new FormLibro(idLibro);
+
+                this.Hide();
+
+                form.FormClosed += async (s, args) =>
+                {
+                    this.Show();
+                    textBoxBuscar.Text = "";
+                    await libro.ListLibroAsync();
+                };
+
+                form.Show();
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un libro de la tabla para editar.");
+            }
+        }
     }
 }
  
