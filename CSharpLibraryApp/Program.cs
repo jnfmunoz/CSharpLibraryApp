@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CSharpLibraryApp.Libro
+namespace CSharpLibraryApp.Editorial
 
 {
     internal static class Program
@@ -19,8 +19,8 @@ namespace CSharpLibraryApp.Libro
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FormGeneros());
             //Application.Run(new FormAutores());
-            //Application.Run(new FormEditoriales());
-            Application.Run(new FormLibros());
+            Application.Run(new FormEditoriales());
+            //Application.Run(new FormLibros());
         }
     }
 }

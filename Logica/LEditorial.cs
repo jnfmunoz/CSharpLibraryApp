@@ -2,7 +2,9 @@
 using LinqToDB;
 using LinqToDB.SqlQuery;
 using Logica.DTOs;
+using Logica.Helpers;
 using Logica.Library;
+using Logica.ViewModels;
 using Org.BouncyCastle.Crypto;
 using System;
 using System.Collections.Generic;
@@ -72,16 +74,59 @@ namespace Logica
                     _dataGridView.DataSource = list;
                     _dataGridView.Columns["Pais"].HeaderText = "País";
 
-                    foreach (DataGridViewColumn col in _dataGridView.Columns)
+                    DataGridViewHelper.AutoResizeColumns(_dataGridView);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al listar editoriales: " + ex.Message);
+            }
+        }
+
+        public async Task SearchEditorialAsync(string field)
+        {
+            try
+            {
+                using (var db = new Conexion())
+                {
+                    var editoriales = await GetEditorialesAsync(db);
+
+                    if (!string.IsNullOrWhiteSpace(field))
                     {
-                        col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        if (!string.IsNullOrEmpty(field))
+                        {
+                            editoriales = editoriales
+                                .Where(e =>
+                                       e.ID.ToString().Contains(field) || 
+                                       e.Editorial != null && e.Editorial.ToLower().Contains(field) ||
+                                       e.Pais != null && e.Pais.ToLower().Contains(field))
+                                .ToList();
+                        }
+                        _dataGridView.DataSource = editoriales;
                     }
                 }
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Error al buscar editoriales: " + ex.Message);
             }
         }
+
+        public async Task SaveEditorialAsync(EditorialInputModel input)
+        {
+            /* aqui quedé 
+             * nota: revisar el método buscar, con el fin de que cuando el textbox vuelva
+             * a quedar vacío se pueda reiniciar ListXXXXAsync ✔
+             */
+        }
+
+        public List<Editorial> GetEditoriales()
+        {
+            using (var db = new Conexion())
+            {
+                return db.GetTable<Editorial>().ToList();
+            }
+        }
+
     }
 }

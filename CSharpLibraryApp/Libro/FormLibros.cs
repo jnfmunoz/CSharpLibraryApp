@@ -1,5 +1,6 @@
 ﻿using CSharpLibraryApp.Libro;
 using Logica;
+using Logica.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,15 +25,14 @@ namespace CSharpLibraryApp.Libro
                 dataGridViewLibro
             };
 
-            libro = new LLibro(objetos);
+            libro = new LLibro(objetos);            
 
             this.Shown += async (s, e) =>
             {
                 await libro.ListLibroAsync();
             };
 
-            dataGridViewLibro.CurrentCell = null;
-
+            DataGridViewHelper.SetupDataGridViewDefaults(dataGridViewLibro);
         }
 
         private async void textBoxBuscar_TextChanged(object sender, EventArgs e)

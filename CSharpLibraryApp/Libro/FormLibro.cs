@@ -64,9 +64,9 @@ namespace CSharpLibraryApp.Libro
 
         private void LoadComboEditorial()
         {
-            LEditorial editorial = new LEditorial();            
-
-            comboBoxEditorial.DataSource = editorial.GetEditoriales();
+            LEditorial editorial = new LEditorial();
+            
+            comboBoxEditorial.DataSource = editorial.GetEditoriales();            
             comboBoxEditorial.DisplayMember = "nombre";
             comboBoxEditorial.ValueMember = "idEDITORIAL";
         }

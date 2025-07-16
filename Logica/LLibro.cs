@@ -2,6 +2,7 @@
 using LinqToDB;
 using LinqToDB.DataProvider.DB2;
 using Logica.DTOs;
+using Logica.Helpers;
 using Logica.Library;
 using Logica.ViewModels;
 using Org.BouncyCastle.Crypto;
@@ -58,7 +59,8 @@ namespace Logica
                                      e = e.nombre,
                                      g = g.nombre,
                                      a = a.nombre
-                                 }).ToListAsync();
+                                 })
+                                 .ToListAsync();
 
             var result = rawData
                 .GroupBy(x => new
@@ -97,14 +99,11 @@ namespace Logica
                     var list = await GetLibrosAsync(db);
 
                     _dataGridView.DataSource = list;
-                    _dataGridView.Columns["Titulo"].HeaderText = "Título";
-                    _dataGridView.Columns["AnioPublicacion"].HeaderText = "Año de publicación";
-                    _dataGridView.Columns["Genero"].HeaderText = "Género";
-
-                    foreach (DataGridViewColumn col in _dataGridView.Columns)
-                    {
-                        col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    }
+                   
+                    DataGridViewHelper.RenameHeaderTextTitulo(_dataGridView);
+                    DataGridViewHelper.RenameHeaderTextAnioPublicacion(_dataGridView);
+                    DataGridViewHelper.RenameHeaderTextAnioGenero(_dataGridView);
+                    DataGridViewHelper.AutoResizeColumns(_dataGridView);
                 }
             }
             catch (Exception ex)
@@ -125,27 +124,25 @@ namespace Logica
                     {
                         if (!string.IsNullOrEmpty(field))
                         {
-                            libros = libros.Where(l =>
-                                l.ID.ToString().Contains(field) ||
-                                (l.Titulo != null && l.Titulo.ToLower().Contains(field.ToLower())) ||
-                                (l.ISBN != null && l.ISBN.ToLower().Contains(field.ToLower())) ||
-                                l.AnioPublicacion.ToString().Contains(field) ||
-                                (l.Sinopsis != null && l.Sinopsis.ToLower().Contains(field.ToLower())) ||
-                                (l.Editorial != null && l.Editorial.ToLower().Contains(field.ToLower())) ||
-                                (l.Genero != null && l.Genero.ToLower().Contains(field.ToLower())) ||
-                                (l.Autor != null && l.Autor.ToLower().Contains(field.ToLower()))
-                            ).ToList();
+                            libros = libros
+                                .Where(l =>                            
+                                       l.ID.ToString().Contains(field) ||
+                                       (l.Titulo != null && l.Titulo.ToLower().Contains(field.ToLower())) ||
+                                       (l.ISBN != null && l.ISBN.ToLower().Contains(field.ToLower())) ||
+                                       l.AnioPublicacion.ToString().Contains(field) ||
+                                       (l.Sinopsis != null && l.Sinopsis.ToLower().Contains(field.ToLower())) ||
+                                       (l.Editorial != null && l.Editorial.ToLower().Contains(field.ToLower())) ||
+                                       (l.Genero != null && l.Genero.ToLower().Contains(field.ToLower())) ||
+                                       (l.Autor != null && l.Autor.ToLower().Contains(field.ToLower()))                            )
+							    .ToList();
                         }
 
                         _dataGridView.DataSource = libros;
-                        _dataGridView.Columns["Titulo"].HeaderText = "Título";
-                        _dataGridView.Columns["AnioPublicacion"].HeaderText = "Año de publicación";
-                        _dataGridView.Columns["Genero"].HeaderText = "Género";
-
-                        foreach (DataGridViewColumn col in _dataGridView.Columns)
-                        {
-                            col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        }
+                        
+                        DataGridViewHelper.RenameHeaderTextTitulo(_dataGridView);
+                        DataGridViewHelper.RenameHeaderTextAnioPublicacion(_dataGridView);
+                        DataGridViewHelper.RenameHeaderTextAnioGenero(_dataGridView);
+                        DataGridViewHelper.AutoResizeColumns(_dataGridView);
                     }
                 }
             }
@@ -167,13 +164,13 @@ namespace Logica
                     {
                         case "insert":
                             await db.GetTable<Libro>()
-                                .Value(l => l.titulo, input.Titulo)
-                                .Value(l => l.isbn, input.ISBN)
-                                .Value(l => l.anio_publicacion, input.AnioPublicacion)
-                                .Value(l => l.sinopsis, input.Sinopsis)
-                                .Value(l => l.EDITORIAL_idEDITORIAL, input.EDITORIAL_idEDITORIAL)
-                                .Value(l => l.GENERO_idGENERO, input.GENERO_idGENERO)
-                                .InsertAsync();
+                                    .Value(l => l.titulo, input.Titulo)
+                                    .Value(l => l.isbn, input.ISBN)
+                                    .Value(l => l.anio_publicacion, input.AnioPublicacion)
+                                    .Value(l => l.sinopsis, input.Sinopsis)
+                                    .Value(l => l.EDITORIAL_idEDITORIAL, input.EDITORIAL_idEDITORIAL)
+                                    .Value(l => l.GENERO_idGENERO, input.GENERO_idGENERO)
+                                    .InsertAsync();
                             break;
 
                         case "update":

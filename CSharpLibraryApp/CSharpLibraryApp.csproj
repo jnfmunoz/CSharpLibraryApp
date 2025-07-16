@@ -101,6 +101,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Editorial\FormEditorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editorial\FormEditorial.Designer.cs">
+      <DependentUpon>FormEditorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editorial\FormEditoriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editorial\FormEditoriales.Designer.cs">
+      <DependentUpon>FormEditoriales.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +133,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Editorial\FormEditoriales.resx">
+      <DependentUpon>FormEditoriales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
