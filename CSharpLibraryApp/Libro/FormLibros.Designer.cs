@@ -154,10 +154,14 @@
             // 
             // dataGridViewLibro
             // 
+            this.dataGridViewLibro.AllowUserToAddRows = false;
+            this.dataGridViewLibro.AllowUserToDeleteRows = false;
             this.dataGridViewLibro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLibro.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewLibro.Location = new System.Drawing.Point(6, 9);
             this.dataGridViewLibro.MultiSelect = false;
             this.dataGridViewLibro.Name = "dataGridViewLibro";
+            this.dataGridViewLibro.ReadOnly = true;
             this.dataGridViewLibro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewLibro.Size = new System.Drawing.Size(764, 222);
             this.dataGridViewLibro.TabIndex = 0;

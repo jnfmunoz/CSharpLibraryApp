@@ -101,47 +101,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Autor\FormAutor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Autor\FormAutor.Designer.cs">
-      <DependentUpon>FormAutor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Autor\FormAutores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Autor\FormAutores.Designer.cs">
-      <DependentUpon>FormAutores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Editorial\FormEditorial.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Editorial\FormEditorial.Designer.cs">
-      <DependentUpon>FormEditorial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Editorial\FormEditoriales.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Editorial\FormEditoriales.Designer.cs">
-      <DependentUpon>FormEditoriales.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Genero\FormGenero.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Genero\FormGenero.Designer.cs">
-      <DependentUpon>FormGenero.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Genero\FormGeneros.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Genero\FormGeneros.Designer.cs">
-      <DependentUpon>FormGeneros.cs</DependentUpon>
     </Compile>
     <Compile Include="Libro\FormLibro.cs">
       <SubType>Form</SubType>
@@ -157,26 +121,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Autor\FormAutor.resx">
-      <DependentUpon>FormAutor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Autor\FormAutores.resx">
-      <DependentUpon>FormAutores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Editorial\FormEditorial.resx">
-      <DependentUpon>FormEditorial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Editorial\FormEditoriales.resx">
-      <DependentUpon>FormEditoriales.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Genero\FormGenero.resx">
-      <DependentUpon>FormGenero.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Genero\FormGeneros.resx">
-      <DependentUpon>FormGeneros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Libro\FormLibro.resx">
       <DependentUpon>FormLibro.cs</DependentUpon>

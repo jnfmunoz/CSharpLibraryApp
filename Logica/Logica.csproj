@@ -97,6 +97,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\EditorialDTO.cs" />
     <Compile Include="DTOs\LibroDTO.cs" />
     <Compile Include="LAutor.cs" />
     <Compile Include="LEditorial.cs" />
@@ -104,8 +105,10 @@
     <Compile Include="Library\Librarys.cs" />
     <Compile Include="LLibro.cs" />
     <Compile Include="LPais.cs" />
+    <Compile Include="Mappers\EditorialMapper.cs" />
     <Compile Include="Mappers\LibroMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\EditorialInputModel.cs" />
     <Compile Include="ViewModels\LibroInputModel.cs" />
   </ItemGroup>
   <ItemGroup>

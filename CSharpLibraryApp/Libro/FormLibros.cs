@@ -30,6 +30,9 @@ namespace CSharpLibraryApp.Libro
             {
                 await libro.ListLibroAsync();
             };
+
+            dataGridViewLibro.CurrentCell = null;
+
         }
 
         private async void textBoxBuscar_TextChanged(object sender, EventArgs e)
@@ -80,6 +83,7 @@ namespace CSharpLibraryApp.Libro
         {
             await libro.DeleteLibroAsync();
         }
+
     }
 }
  

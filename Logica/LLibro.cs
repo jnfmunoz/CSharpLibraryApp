@@ -43,9 +43,11 @@ namespace Logica
                                  join g in db.GetTable<Genero>()
                                     on l.GENERO_idGENERO equals g.idGENERO
                                  join la in db.GetTable<LibroAutor>()
-                                    on l.idLIBRO equals la.LIBRO_idLIBRO
+                                    on l.idLIBRO equals la.LIBRO_idLIBRO into libroAutor
+                                 from la in libroAutor.DefaultIfEmpty()
                                  join a in db.GetTable<Autor>()
-                                    on la.AUTOR_idAUTOR equals a.idAUTOR
+                                    on la.AUTOR_idAUTOR equals a.idAUTOR into autor
+                                 from a in autor.DefaultIfEmpty()
                                  select new
                                  {
                                      l.idLIBRO,
@@ -214,7 +216,9 @@ namespace Logica
                 {
                     using (var db = new Conexion())
                     {
-                        await _Libro.Where(l => l.idLIBRO.Equals(_idLibro)).DeleteAsync();
+                        await _Libro
+                                .Where(l => l.idLIBRO.Equals(_idLibro))
+                                .DeleteAsync();
                     }
                 }
 
