@@ -122,8 +122,6 @@ namespace Logica
 
                     if (!string.IsNullOrWhiteSpace(field))
                     {
-                        if (!string.IsNullOrEmpty(field))
-                        {
                             libros = libros
                                 .Where(l =>                            
                                        l.ID.ToString().Contains(field) ||
@@ -134,16 +132,15 @@ namespace Logica
                                        (l.Editorial != null && l.Editorial.ToLower().Contains(field.ToLower())) ||
                                        (l.Genero != null && l.Genero.ToLower().Contains(field.ToLower())) ||
                                        (l.Autor != null && l.Autor.ToLower().Contains(field.ToLower()))                            )
-							    .ToList();
-                        }
-
-                        _dataGridView.DataSource = libros;
-                        
-                        DataGridViewHelper.RenameHeaderTextTitulo(_dataGridView);
-                        DataGridViewHelper.RenameHeaderTextAnioPublicacion(_dataGridView);
-                        DataGridViewHelper.RenameHeaderTextAnioGenero(_dataGridView);
-                        DataGridViewHelper.AutoResizeColumns(_dataGridView);
+							    .ToList();                        
                     }
+
+                    _dataGridView.DataSource = libros;
+
+                    DataGridViewHelper.RenameHeaderTextTitulo(_dataGridView);
+                    DataGridViewHelper.RenameHeaderTextAnioPublicacion(_dataGridView);
+                    DataGridViewHelper.RenameHeaderTextAnioGenero(_dataGridView);
+                    DataGridViewHelper.AutoResizeColumns(_dataGridView);
                 }
             }
             catch (Exception ex)
@@ -208,7 +205,7 @@ namespace Logica
             else
             {
                 if (MessageBox.Show("Estás seguro de eliminar el Libro?",
-                    "Eliminar Editorial",
+                    "Eliminar Libro",
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     using (var db = new Conexion())

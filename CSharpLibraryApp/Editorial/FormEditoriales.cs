@@ -39,5 +39,20 @@ namespace CSharpLibraryApp.Editorial
         {
             await editorial.SearchEditorialAsync(textBoxBuscar.Text.Trim());
         }
+
+        private void buttonAgregarEditorial_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            var form = new FormEditorial();
+            form.FormClosed += async (s, args) =>
+            {
+                this.Show();
+                textBoxBuscar.Text = "";
+                await editorial.ListEditorialAsync();
+            };
+            form.Show();
+        }
+
     }
 }

@@ -133,6 +133,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Editorial\FormEditorial.resx">
+      <DependentUpon>FormEditorial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editorial\FormEditoriales.resx">
       <DependentUpon>FormEditoriales.cs</DependentUpon>
     </EmbeddedResource>

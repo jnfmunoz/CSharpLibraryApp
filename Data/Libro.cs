@@ -23,6 +23,5 @@ namespace Data
         public int EDITORIAL_idEDITORIAL { get; set; }
         [Column(Name = "GENERO_idGENERO")]
         public int GENERO_idGENERO { get; set; }
-
     }
 }

@@ -53,3 +53,4 @@ C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.exe.con
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.Libro.FormLibro.resources
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.Libro.FormLibros.resources
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.Editorial.FormEditoriales.resources
+C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.Editorial.FormEditorial.resources

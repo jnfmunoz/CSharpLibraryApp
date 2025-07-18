@@ -38,7 +38,7 @@ namespace CSharpLibraryApp.Libro
 
         private void FormLibro_Load(object  sender, EventArgs e)
         {
-            if(_idLibro > 0)
+            if (_idLibro > 0)
             {
                 var libroEntity = libro.GetLibro(_idLibro);
 

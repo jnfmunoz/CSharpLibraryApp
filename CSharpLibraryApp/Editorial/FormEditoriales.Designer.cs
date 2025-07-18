@@ -139,6 +139,7 @@
             this.buttonAgregarEditorial.TabIndex = 0;
             this.buttonAgregarEditorial.Text = "Agregar";
             this.buttonAgregarEditorial.UseVisualStyleBackColor = true;
+            this.buttonAgregarEditorial.Click += new System.EventHandler(this.buttonAgregarEditorial_Click);
             // 
             // groupBox4
             // 

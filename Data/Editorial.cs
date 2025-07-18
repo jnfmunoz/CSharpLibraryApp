@@ -15,6 +15,5 @@ namespace Data
         public string nombre { get; set; }
         [Column(Name = "PAIS_idPAIS")]
         public int PAIS_idPAIS { get; set; }
-
     }
 }

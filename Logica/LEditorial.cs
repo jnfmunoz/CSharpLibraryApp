@@ -92,18 +92,16 @@ namespace Logica
                     var editoriales = await GetEditorialesAsync(db);
 
                     if (!string.IsNullOrWhiteSpace(field))
-                    {
-                        if (!string.IsNullOrEmpty(field))
-                        {
+                    {                        
+                        
                             editoriales = editoriales
                                 .Where(e =>
                                        e.ID.ToString().Contains(field) || 
                                        e.Editorial != null && e.Editorial.ToLower().Contains(field) ||
                                        e.Pais != null && e.Pais.ToLower().Contains(field))
-                                .ToList();
-                        }
-                        _dataGridView.DataSource = editoriales;
+                                .ToList();                        
                     }
+                    _dataGridView.DataSource = editoriales;
                 }
             }
             catch (Exception ex)
@@ -114,10 +112,62 @@ namespace Logica
 
         public async Task SaveEditorialAsync(EditorialInputModel input)
         {
-            /* aqui quedé 
-             * nota: revisar el método buscar, con el fin de que cuando el textbox vuelva
-             * a quedar vacío se pueda reiniciar ListXXXXAsync ✔
-             */
+            using (var db = new Conexion())
+            {
+                await db.BeginTransactionAsync();
+            
+                try
+                {
+                    switch (_action)
+                    {
+                        case "insert":
+                            await db.GetTable<Editorial>()
+                                .Value(e => e.nombre, input.Editorial)
+                                .Value(e => e.PAIS_idPAIS, input.Pais)
+                                .InsertAsync();
+                            break;
+                        case "update":
+                            await db.GetTable<Editorial>()
+                                .Where(e => e.idEDITORIAL == _idEditorial)
+                                .Set(e => e.nombre, input.Editorial)
+                                .Set(e => e.PAIS_idPAIS, input.Pais)
+                                .UpdateAsync();
+                            break;
+                    }
+                    await db.CommitTransactionAsync();
+                    MessageBox.Show("Editorial guardada exitosamente.");
+                }
+                catch (Exception ex)
+                {
+                    await db.RollbackTransactionAsync();
+                    MessageBox.Show("Error al guardar editorial: " + ex.Message);
+                }
+            }
+        }
+
+        public async Task DeleteEditorialAsync()
+        {
+            GetEditorialSelected();
+
+            if (_idEditorial.Equals(0))
+            {
+                MessageBox.Show("Seleccione una editorial!");
+            }
+            else
+            {
+                if(MessageBox.Show("Estás seguro de eliminar la editorial?",
+                        "Eliminar Editorial",
+                        MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    using (var db = new Conexion())
+                    {
+                        await _Editorial
+                            .Where(e => e.idEDITORIAL.Equals(_idEditorial))
+                            .DeleteAsync();
+                    }
+                }
+                await ListEditorialAsync();
+            }
         }
 
         public List<Editorial> GetEditoriales()
@@ -126,6 +176,31 @@ namespace Logica
             {
                 return db.GetTable<Editorial>().ToList();
             }
+        }
+
+        public Editorial GetEditorial(int idEditorial)
+        {
+            using (var db = new Conexion())
+            {
+                return db._Editorial.FirstOrDefault(e => e.idEDITORIAL == idEditorial);
+            }
+        }
+
+        public void GetEditorialSelected()
+        {
+            if (_dataGridView.CurrentRow != null)
+            {
+                _idEditorial = Convert.ToInt32(_dataGridView.CurrentRow.Cells[0].Value);
+            }
+            else
+            {
+                _idEditorial = 0;
+            }
+        }
+
+        public void ChangeAction(string action)
+        {
+            _action = action;
         }
 
     }
