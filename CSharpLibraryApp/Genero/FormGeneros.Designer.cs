@@ -1,6 +1,6 @@
-﻿namespace CSharpLibraryApp.Editorial
+﻿namespace CSharpLibraryApp.Genero
 {
-    partial class FormEditoriales
+    partial class FormGeneros
     {
         /// <summary>
         /// Required designer variable.
@@ -35,16 +35,16 @@
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.buttonEliminarEditorial = new System.Windows.Forms.Button();
-            this.buttonEditarEditorial = new System.Windows.Forms.Button();
-            this.buttonAgregarEditorial = new System.Windows.Forms.Button();
+            this.buttonEliminarGenero = new System.Windows.Forms.Button();
+            this.buttonEditarGenero = new System.Windows.Forms.Button();
+            this.buttonAgregarGenero = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridViewEditorial = new System.Windows.Forms.DataGridView();
+            this.dataGridViewGenero = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEditorial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenero)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -53,7 +53,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 8);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(776, 58);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
             // label1
@@ -61,9 +61,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(348, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Editoriales";
+            this.label1.Text = "Géneros";
             // 
             // groupBox2
             // 
@@ -72,7 +72,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 72);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(776, 60);
-            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             // 
             // label2
@@ -90,18 +90,17 @@
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(118, 20);
             this.textBoxBuscar.TabIndex = 0;
-            this.textBoxBuscar.TextChanged += new System.EventHandler(this.textBoxBuscar_TextChanged);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.buttonEliminarEditorial);
-            this.groupBox3.Controls.Add(this.buttonEditarEditorial);
-            this.groupBox3.Controls.Add(this.buttonAgregarEditorial);
+            this.groupBox3.Controls.Add(this.buttonEliminarGenero);
+            this.groupBox3.Controls.Add(this.buttonEditarGenero);
+            this.groupBox3.Controls.Add(this.buttonAgregarGenero);
             this.groupBox3.Location = new System.Drawing.Point(12, 138);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(776, 62);
-            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             // 
             // button4
@@ -113,60 +112,57 @@
             this.button4.Text = "Atrás";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // buttonEliminarEditorial
+            // buttonEliminarGenero
             // 
-            this.buttonEliminarEditorial.Location = new System.Drawing.Point(372, 19);
-            this.buttonEliminarEditorial.Name = "buttonEliminarEditorial";
-            this.buttonEliminarEditorial.Size = new System.Drawing.Size(75, 23);
-            this.buttonEliminarEditorial.TabIndex = 2;
-            this.buttonEliminarEditorial.Text = "Eliminar";
-            this.buttonEliminarEditorial.UseVisualStyleBackColor = true;
-            this.buttonEliminarEditorial.Click += new System.EventHandler(this.buttonEliminarEditorial_Click);
+            this.buttonEliminarGenero.Location = new System.Drawing.Point(372, 19);
+            this.buttonEliminarGenero.Name = "buttonEliminarGenero";
+            this.buttonEliminarGenero.Size = new System.Drawing.Size(75, 23);
+            this.buttonEliminarGenero.TabIndex = 2;
+            this.buttonEliminarGenero.Text = "Eliminar";
+            this.buttonEliminarGenero.UseVisualStyleBackColor = true;
             // 
-            // buttonEditarEditorial
+            // buttonEditarGenero
             // 
-            this.buttonEditarEditorial.Location = new System.Drawing.Point(291, 20);
-            this.buttonEditarEditorial.Name = "buttonEditarEditorial";
-            this.buttonEditarEditorial.Size = new System.Drawing.Size(75, 23);
-            this.buttonEditarEditorial.TabIndex = 1;
-            this.buttonEditarEditorial.Text = "Editar";
-            this.buttonEditarEditorial.UseVisualStyleBackColor = true;
-            this.buttonEditarEditorial.Click += new System.EventHandler(this.buttonEditarEditorial_Click);
+            this.buttonEditarGenero.Location = new System.Drawing.Point(291, 20);
+            this.buttonEditarGenero.Name = "buttonEditarGenero";
+            this.buttonEditarGenero.Size = new System.Drawing.Size(75, 23);
+            this.buttonEditarGenero.TabIndex = 1;
+            this.buttonEditarGenero.Text = "Editar";
+            this.buttonEditarGenero.UseVisualStyleBackColor = true;
             // 
-            // buttonAgregarEditorial
+            // buttonAgregarGenero
             // 
-            this.buttonAgregarEditorial.Location = new System.Drawing.Point(210, 20);
-            this.buttonAgregarEditorial.Name = "buttonAgregarEditorial";
-            this.buttonAgregarEditorial.Size = new System.Drawing.Size(75, 23);
-            this.buttonAgregarEditorial.TabIndex = 0;
-            this.buttonAgregarEditorial.Text = "Agregar";
-            this.buttonAgregarEditorial.UseVisualStyleBackColor = true;
-            this.buttonAgregarEditorial.Click += new System.EventHandler(this.buttonAgregarEditorial_Click);
+            this.buttonAgregarGenero.Location = new System.Drawing.Point(210, 20);
+            this.buttonAgregarGenero.Name = "buttonAgregarGenero";
+            this.buttonAgregarGenero.Size = new System.Drawing.Size(75, 23);
+            this.buttonAgregarGenero.TabIndex = 0;
+            this.buttonAgregarGenero.Text = "Agregar";
+            this.buttonAgregarGenero.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.dataGridViewEditorial);
+            this.groupBox4.Controls.Add(this.dataGridViewGenero);
             this.groupBox4.Location = new System.Drawing.Point(12, 206);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(776, 237);
-            this.groupBox4.TabIndex = 7;
+            this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             // 
-            // dataGridViewEditorial
+            // dataGridViewGenero
             // 
-            this.dataGridViewEditorial.AllowUserToAddRows = false;
-            this.dataGridViewEditorial.AllowUserToDeleteRows = false;
-            this.dataGridViewEditorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEditorial.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewEditorial.Location = new System.Drawing.Point(6, 7);
-            this.dataGridViewEditorial.MultiSelect = false;
-            this.dataGridViewEditorial.Name = "dataGridViewEditorial";
-            this.dataGridViewEditorial.ReadOnly = true;
-            this.dataGridViewEditorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewEditorial.Size = new System.Drawing.Size(764, 222);
-            this.dataGridViewEditorial.TabIndex = 1;
+            this.dataGridViewGenero.AllowUserToAddRows = false;
+            this.dataGridViewGenero.AllowUserToDeleteRows = false;
+            this.dataGridViewGenero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewGenero.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewGenero.Location = new System.Drawing.Point(6, 7);
+            this.dataGridViewGenero.MultiSelect = false;
+            this.dataGridViewGenero.Name = "dataGridViewGenero";
+            this.dataGridViewGenero.ReadOnly = true;
+            this.dataGridViewGenero.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewGenero.Size = new System.Drawing.Size(764, 222);
+            this.dataGridViewGenero.TabIndex = 1;
             // 
-            // FormEditoriales
+            // FormGeneros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -175,15 +171,15 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
-            this.Name = "FormEditoriales";
-            this.Text = "FormEditoriales";
+            this.Name = "FormGeneros";
+            this.Text = "FormGeneros";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEditorial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGenero)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -197,10 +193,10 @@
         private System.Windows.Forms.TextBox textBoxBuscar;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button buttonEliminarEditorial;
-        private System.Windows.Forms.Button buttonEditarEditorial;
-        private System.Windows.Forms.Button buttonAgregarEditorial;
+        private System.Windows.Forms.Button buttonEliminarGenero;
+        private System.Windows.Forms.Button buttonEditarGenero;
+        private System.Windows.Forms.Button buttonAgregarGenero;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataGridView dataGridViewEditorial;
+        private System.Windows.Forms.DataGridView dataGridViewGenero;
     }
 }

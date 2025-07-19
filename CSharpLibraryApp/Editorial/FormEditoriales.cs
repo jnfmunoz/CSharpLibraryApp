@@ -31,8 +31,7 @@ namespace CSharpLibraryApp.Editorial
                 await editorial.ListEditorialAsync();
             };
 
-            DataGridViewHelper.SetupDataGridViewDefaults(dataGridViewEditorial);
-            
+            DataGridViewHelper.SetupDataGridViewDefaults(dataGridViewEditorial);            
         }
 
         private async void textBoxBuscar_TextChanged(object sender, EventArgs e)
@@ -54,5 +53,31 @@ namespace CSharpLibraryApp.Editorial
             form.Show();
         }
 
+        private void buttonEditarEditorial_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewEditorial.CurrentRow != null)
+            {
+                int idEditorial = Convert.ToInt32(dataGridViewEditorial.CurrentRow.Cells[0].Value);
+                var form = new FormEditorial(idEditorial);
+                this.Hide();
+
+                form.FormClosed += async (s, args) =>
+                {
+                    this.Show();
+                    textBoxBuscar.Text = "";
+                    await editorial.ListEditorialAsync();
+                };
+                form.Show();
+            }
+            else 
+            {
+                MessageBox.Show("Selecciona una editorial");
+            }
+        }
+
+        private async void buttonEliminarEditorial_Click(object sender, EventArgs e)
+        {
+            await editorial.DeleteEditorialAsync();
+        }
     }
 }

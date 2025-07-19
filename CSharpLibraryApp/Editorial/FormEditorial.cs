@@ -24,6 +24,7 @@ namespace CSharpLibraryApp.Editorial
         {
             InitializeComponent();
             this.Load += FormEditorial_Load;
+            LoadComboPais();
         }
 
         public FormEditorial (int idEditorial) : this()
@@ -68,8 +69,34 @@ namespace CSharpLibraryApp.Editorial
         private void MapToUI(EditorialInputModel model)
         {
             textBoxNombre.Text = model.Editorial ?? "";
-
+            comboBoxPais.SelectedValue = model.Pais;
         }
 
+        private void MapFromUI (EditorialInputModel model)
+        {
+            model.Editorial = textBoxNombre.Text.Trim();
+            model.Pais = Convert.ToInt32(comboBoxPais.SelectedValue);
+        }
+
+        private async void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MapFromUI(_inputModel);
+                
+                if (_inputModel.Pais == 0)
+                {
+                    MessageBox.Show("Selecciona un país de origen válido");
+                    return;
+                }
+                
+                await editorial.SaveEditorialAsync(_inputModel);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar editorial: " + ex.Message);
+            }
+        }
     }
 }

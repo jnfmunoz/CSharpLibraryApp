@@ -61,16 +61,14 @@ namespace CSharpLibraryApp.Libro
             {
                 int idLibro = Convert.ToInt32(dataGridViewLibro.CurrentRow.Cells[0].Value);
                 var form = new FormLibro(idLibro);
-
                 this.Hide();
 
-                form.FormClosed += async (s, args) =>
+                form.FormClosed += async(s, args) =>
                 {
                     this.Show();
                     textBoxBuscar.Text = "";
                     await libro.ListLibroAsync();
                 };
-
                 form.Show();
             }
             else

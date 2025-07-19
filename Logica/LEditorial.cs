@@ -38,27 +38,28 @@ namespace Logica
         {
             var rawData = await (from e in db.GetTable<Editorial>()
                                  join p in db.GetTable<Pais>()
-                                 on e.PAIS_idPAIS equals p.idPAIS
+                                    on e.PAIS_idPAIS equals p.idPAIS
                                  select new
                                  {
                                      e.idEDITORIAL,
                                      e = e.nombre,
                                      p = p.nombre
-                                 }).ToListAsync();
+                                 })
+                                 .ToListAsync();
             var result = rawData
-                .GroupBy(x => new
-                {
-                    x.idEDITORIAL,
-                    x.e,
-                    x.p
-                })
-                .Select(group => new EditorialDTO
-                {
-                    ID = group.Key.idEDITORIAL,
-                    Editorial = group.Key.e,
-                    Pais = group.Key.p
-                })
-                .ToList();
+                        .GroupBy(x => new
+                        {
+                            x.idEDITORIAL,
+                            x.e,
+                            x.p
+                        })
+                        .Select(group => new EditorialDTO
+                        {
+                            ID = group.Key.idEDITORIAL,
+                            Editorial = group.Key.e,
+                            Pais = group.Key.p
+                        })
+                        .ToList();
 
             return result;
         }
@@ -72,8 +73,7 @@ namespace Logica
                     var list = await GetEditorialesAsync(db);
 
                     _dataGridView.DataSource = list;
-                    _dataGridView.Columns["Pais"].HeaderText = "País";
-
+                    DataGridViewHelper.RenameHeaderTextPais(_dataGridView);
                     DataGridViewHelper.AutoResizeColumns(_dataGridView);
                 }
             }
