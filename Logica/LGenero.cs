@@ -1,6 +1,7 @@
 ﻿using Data;
 using LinqToDB;
 using Logica.DTOs;
+using Logica.Helpers;
 using Logica.Library;
 using Org.BouncyCastle.Crypto.Operators;
 using System;
@@ -64,14 +65,63 @@ namespace Logica
                     var list = await GetGenerosAsync(db);
 
                     _dataGridView.DataSource = list;
-
+                    DataGridViewHelper.RenameHeaderTextGenero(_dataGridView);
+                    DataGridViewHelper.AutoResizeColumns(_dataGridView);
                 }
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Error al listar géneros: " + ex.Message);
             }
         }
 
+        public async Task SearchGeneroAsync(string field)
+        {
+            try
+            {
+                using (var db = new Conexion())
+                {
+                    var generos = await GetGenerosAsync(db);
+
+                    if(!string.IsNullOrWhiteSpace(field))
+                    {
+                        generos = generos
+                                  .Where(g => 
+                                    g.ID.ToString().Contains(field) ||
+                                    (g.Genero != null && g.Genero.ToLower().Contains(field.ToLower())))
+                                  .ToList();
+                    }
+
+                    _dataGridView.DataSource = generos;
+                    DataGridViewHelper.RenameHeaderTextGenero(_dataGridView);
+                    DataGridViewHelper.AutoResizeColumns(_dataGridView);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar Género: " + ex.Message);
+            }
+        }
+
+        public Genero GetGenero (int idGenero)
+        {
+            using (var db = new Conexion())
+            {
+                return db._Genero.FirstOrDefault(g => g.idGENERO == idGenero);
+            }
+        }
+
+        public List <Genero> GetGeneros()
+        {
+            using (var db = new Conexion())
+            { 
+                return db.GetTable<Genero>().ToList();
+            }
+        }
+
+        public void ChangeAction(string action)
+        {
+            _action = action;
+        }
     }
 }

@@ -40,5 +40,11 @@ namespace Logica.Helpers
         {
             dgv.Columns["Pais"].HeaderText = "País";
         }
+
+        public static void RenameHeaderTextGenero(DataGridView dgv)
+        {
+            dgv.Columns["Genero"].HeaderText = "Género";
+        }
+
     }
 }

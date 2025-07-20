@@ -90,6 +90,7 @@
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(118, 20);
             this.textBoxBuscar.TabIndex = 0;
+            this.textBoxBuscar.TextChanged += new System.EventHandler(this.textBoxBuscar_TextChanged);
             // 
             // groupBox3
             // 
@@ -129,6 +130,7 @@
             this.buttonEditarGenero.TabIndex = 1;
             this.buttonEditarGenero.Text = "Editar";
             this.buttonEditarGenero.UseVisualStyleBackColor = true;
+            this.buttonEditarGenero.Click += new System.EventHandler(this.buttonEditarGenero_Click);
             // 
             // buttonAgregarGenero
             // 
@@ -138,6 +140,7 @@
             this.buttonAgregarGenero.TabIndex = 0;
             this.buttonAgregarGenero.Text = "Agregar";
             this.buttonAgregarGenero.UseVisualStyleBackColor = true;
+            this.buttonAgregarGenero.Click += new System.EventHandler(this.buttonAgregarGenero_Click);
             // 
             // groupBox4
             // 

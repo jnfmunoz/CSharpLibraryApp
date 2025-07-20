@@ -123,20 +123,19 @@ namespace Logica
                     if (!string.IsNullOrWhiteSpace(field))
                     {
                             libros = libros
-                                .Where(l =>                            
-                                       l.ID.ToString().Contains(field) ||
-                                       (l.Titulo != null && l.Titulo.ToLower().Contains(field.ToLower())) ||
-                                       (l.ISBN != null && l.ISBN.ToLower().Contains(field.ToLower())) ||
-                                       l.AnioPublicacion.ToString().Contains(field) ||
-                                       (l.Sinopsis != null && l.Sinopsis.ToLower().Contains(field.ToLower())) ||
-                                       (l.Editorial != null && l.Editorial.ToLower().Contains(field.ToLower())) ||
-                                       (l.Genero != null && l.Genero.ToLower().Contains(field.ToLower())) ||
-                                       (l.Autor != null && l.Autor.ToLower().Contains(field.ToLower()))                            )
-							    .ToList();                        
+                                     .Where(l =>                            
+                                        l.ID.ToString().Contains(field) ||
+                                        (l.Titulo != null && l.Titulo.ToLower().Contains(field.ToLower())) ||
+                                        (l.ISBN != null && l.ISBN.ToLower().Contains(field.ToLower())) ||
+                                        l.AnioPublicacion.ToString().Contains(field) ||
+                                        (l.Sinopsis != null && l.Sinopsis.ToLower().Contains(field.ToLower())) ||
+                                        (l.Editorial != null && l.Editorial.ToLower().Contains(field.ToLower())) ||
+                                        (l.Genero != null && l.Genero.ToLower().Contains(field.ToLower())) ||
+                                        (l.Autor != null && l.Autor.ToLower().Contains(field.ToLower()))                            )
+							         .ToList();                        
                     }
 
                     _dataGridView.DataSource = libros;
-
                     DataGridViewHelper.RenameHeaderTextTitulo(_dataGridView);
                     DataGridViewHelper.RenameHeaderTextAnioPublicacion(_dataGridView);
                     DataGridViewHelper.RenameHeaderTextAnioGenero(_dataGridView);
