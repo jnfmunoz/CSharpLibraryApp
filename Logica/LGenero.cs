@@ -3,6 +3,7 @@ using LinqToDB;
 using Logica.DTOs;
 using Logica.Helpers;
 using Logica.Library;
+using Logica.ViewModels;
 using Org.BouncyCastle.Crypto.Operators;
 using System;
 using System.Collections.Generic;
@@ -103,6 +104,64 @@ namespace Logica
             }
         }
 
+        public async Task SaveGeneroAsync(GeneroInputModel input)
+        {
+            using (var db = new Conexion())
+            {
+                await db.BeginTransactionAsync();
+                try
+                {
+                    switch (_action)
+                    {
+                        case "insert":
+                            await db.GetTable<Genero>()
+                                    .Value(g => g.nombre, input.Genero)
+                                    .InsertAsync();
+                            break;
+                        case "update":
+                            await db.GetTable<Genero>()
+                                    .Where(g => g.idGENERO == _idGenero)
+                                    .Set(g => g.nombre, input.Genero)
+                                    .UpdateAsync();
+                            break;
+                    }
+
+                    await db.CommitTransactionAsync();
+                    MessageBox.Show("Género guardado exitosamente.");
+                }
+                catch (Exception ex)
+                {
+                    await db.RollbackTransactionAsync();
+                    MessageBox.Show("Error al guardar género: " + ex.Message);
+                }
+            }
+        }
+
+        public async Task DeleteGeneroAsync()
+        {
+            GetGeneroSelected();
+            if (_idGenero.Equals(0))
+            {
+                MessageBox.Show("Seleccione un género!");
+            }
+            else
+            {
+                if (MessageBox.Show("Está seguro de eliminar el género?",
+                    "Eliminar género",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    using (var db = new Conexion())
+                    {
+                        await _Genero
+                                .Where(g => g.idGENERO.Equals(_idGenero))
+                                .DeleteAsync();
+                    }
+                }
+
+                await ListGeneroAsync();
+            }
+        }
+
         public Genero GetGenero (int idGenero)
         {
             using (var db = new Conexion())
@@ -116,6 +175,18 @@ namespace Logica
             using (var db = new Conexion())
             { 
                 return db.GetTable<Genero>().ToList();
+            }
+        }
+
+        public void GetGeneroSelected()
+        {
+            if (_dataGridView.CurrentRow != null)
+            {
+                _idGenero = Convert.ToInt32(_dataGridView.CurrentRow.Cells[0].Value);
+            }
+            else
+            {
+                _idGenero = 0;
             }
         }
 

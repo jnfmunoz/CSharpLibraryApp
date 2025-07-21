@@ -153,7 +153,6 @@ namespace Logica
             using (var db = new Conexion())
             {
                 await db.BeginTransactionAsync();
-
                 try
                 {
                     switch (_action)

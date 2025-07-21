@@ -114,7 +114,6 @@ namespace CSharpLibraryApp.Libro
                 }
 
                 await libro.SaveLibroAsync(_inputModel);
-
                 this.Close();
 
             }

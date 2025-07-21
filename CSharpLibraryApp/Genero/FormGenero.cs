@@ -18,7 +18,6 @@ namespace CSharpLibraryApp.Genero
         private LGenero genero = new LGenero();
         private GeneroInputModel _inputModel = new GeneroInputModel();
         private int _idGenero = 0;
-
         public FormGenero()
         {
             InitializeComponent();
@@ -67,17 +66,17 @@ namespace CSharpLibraryApp.Genero
             model.Genero = textBoxNombre.Text.Trim();
         }
 
-        private async Task buttonGuardar_Click(object sender, EventArgs e)
+        private async void buttonGuardar_Click(object sender, EventArgs e)
         {
             try
             {
                 MapFromUI(_inputModel);
-                //await 
+                await genero.SaveGeneroAsync(_inputModel);
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar el género: " + ex.Message);
+                MessageBox.Show("Error al guardar género: " + ex.Message);
             }
         }
     }

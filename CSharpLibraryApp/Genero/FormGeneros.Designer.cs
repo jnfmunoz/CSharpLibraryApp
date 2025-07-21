@@ -121,6 +121,7 @@
             this.buttonEliminarGenero.TabIndex = 2;
             this.buttonEliminarGenero.Text = "Eliminar";
             this.buttonEliminarGenero.UseVisualStyleBackColor = true;
+            this.buttonEliminarGenero.Click += new System.EventHandler(this.buttonEliminarGenero_Click);
             // 
             // buttonEditarGenero
             // 

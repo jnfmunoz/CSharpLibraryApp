@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 
 namespace CSharpLibraryApp.Genero
@@ -41,7 +42,7 @@ namespace CSharpLibraryApp.Genero
 
         private void buttonAgregarGenero_Click(object sender, EventArgs e)
         {
-            this.Hide(); 
+            this.Hide();
 
             var form = new FormGenero();
             form.FormClosed += async (s, args) =>
@@ -56,7 +57,29 @@ namespace CSharpLibraryApp.Genero
 
         private void buttonEditarGenero_Click(object sender, EventArgs e)
         {
+            if (dataGridViewGenero.CurrentRow != null)
+            {
+                int idGenero = Convert.ToInt32(dataGridViewGenero.CurrentRow.Cells[0].Value);
+                var form = new FormGenero(idGenero);
+                this.Hide();
 
+                form.FormClosed += async (s, args) =>
+                {
+                    this.Show();
+                    textBoxBuscar.Text = "";
+                    await genero.ListGeneroAsync();
+                };
+                form.Show();
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un género de la tabla para editar.");
+            }
+        }
+
+        private async void buttonEliminarGenero_Click(object sender, EventArgs e)
+        {
+            await genero.DeleteGeneroAsync();
         }
     }
 }
