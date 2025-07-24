@@ -17,6 +17,5 @@ namespace Data
         public DateTime fecha_nacimiento { get; set; }
         [Column(Name = "PAIS_idPAIS")]
         public int PAIS_idPAIS { get; set; }
-
     }
 }

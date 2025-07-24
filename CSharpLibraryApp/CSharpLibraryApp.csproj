@@ -160,6 +160,9 @@
     <EmbeddedResource Include="Autor\FormAutor.resx">
       <DependentUpon>FormAutor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Autor\FormAutores.resx">
+      <DependentUpon>FormAutores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editorial\FormEditorial.resx">
       <DependentUpon>FormEditorial.cs</DependentUpon>
     </EmbeddedResource>

@@ -63,29 +63,29 @@ namespace Logica
                                  .ToListAsync();
 
             var result = rawData
-                .GroupBy(x => new
-                {
-                    x.idLIBRO,
-                    x.titulo,
-                    x.isbn,
-                    x.anio_publicacion,
-                    x.sinopsis,
-                    x.e,
-                    x.g,
-                    x.a
-                })
-                .Select(group => new LibroDTO
-                {
-                    ID = group.Key.idLIBRO,
-                    Titulo = group.Key.titulo,
-                    ISBN = group.Key.isbn,
-                    AnioPublicacion = group.Key.anio_publicacion,
-                    Sinopsis = group.Key.sinopsis,
-                    Editorial = group.Key.e,
-                    Genero = group.Key.g,
-                    Autor = string.Join(", ", group.Select(a => a.a).Distinct())
-                })
-                .ToList();
+                        .GroupBy(x => new
+                        {
+                            x.idLIBRO,
+                            x.titulo,
+                            x.isbn,
+                            x.anio_publicacion,
+                            x.sinopsis,
+                            x.e,
+                            x.g,
+                            x.a
+                        })
+                        .Select(group => new LibroDTO
+                        {
+                            ID = group.Key.idLIBRO,
+                            Titulo = group.Key.titulo,
+                            ISBN = group.Key.isbn,
+                            AnioPublicacion = group.Key.anio_publicacion,
+                            Sinopsis = group.Key.sinopsis,
+                            Editorial = group.Key.e,
+                            Genero = group.Key.g,
+                            Autor = string.Join(", ", group.Select(a => a.a).Distinct())
+                        })
+                        .ToList();
 
             return result;
         }
