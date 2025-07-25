@@ -55,6 +55,7 @@
             this.buttonEditarAutor.TabIndex = 1;
             this.buttonEditarAutor.Text = "Editar";
             this.buttonEditarAutor.UseVisualStyleBackColor = true;
+            this.buttonEditarAutor.Click += new System.EventHandler(this.buttonEditarAutor_Click);
             // 
             // groupBox1
             // 
@@ -140,6 +141,7 @@
             this.buttonAgregarAutor.TabIndex = 0;
             this.buttonAgregarAutor.Text = "Agregar";
             this.buttonAgregarAutor.UseVisualStyleBackColor = true;
+            this.buttonAgregarAutor.Click += new System.EventHandler(this.buttonAgregarAutor_Click);
             // 
             // groupBox4
             // 

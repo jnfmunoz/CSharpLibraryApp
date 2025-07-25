@@ -1,0 +1,202 @@
+﻿namespace CSharpLibraryApp.LibroAutor
+{
+    partial class FormLibrosAutores
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonAtras = new System.Windows.Forms.Button();
+            this.buttonEliminarLibroAutor = new System.Windows.Forms.Button();
+            this.buttonEditarLibroAutor = new System.Windows.Forms.Button();
+            this.buttonAgregarLibroAutor = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxBuscar = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dataGridViewLibroAutor = new System.Windows.Forms.DataGridView();
+            this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLibroAutor)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 8);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(776, 58);
+            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(348, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Libro Autor";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.buttonAtras);
+            this.groupBox3.Controls.Add(this.buttonEliminarLibroAutor);
+            this.groupBox3.Controls.Add(this.buttonEditarLibroAutor);
+            this.groupBox3.Controls.Add(this.buttonAgregarLibroAutor);
+            this.groupBox3.Location = new System.Drawing.Point(12, 138);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(776, 62);
+            this.groupBox3.TabIndex = 30;
+            this.groupBox3.TabStop = false;
+            // 
+            // buttonAtras
+            // 
+            this.buttonAtras.Location = new System.Drawing.Point(453, 20);
+            this.buttonAtras.Name = "buttonAtras";
+            this.buttonAtras.Size = new System.Drawing.Size(75, 23);
+            this.buttonAtras.TabIndex = 3;
+            this.buttonAtras.Text = "Atrás";
+            this.buttonAtras.UseVisualStyleBackColor = true;
+            // 
+            // buttonEliminarLibroAutor
+            // 
+            this.buttonEliminarLibroAutor.Location = new System.Drawing.Point(372, 19);
+            this.buttonEliminarLibroAutor.Name = "buttonEliminarLibroAutor";
+            this.buttonEliminarLibroAutor.Size = new System.Drawing.Size(75, 23);
+            this.buttonEliminarLibroAutor.TabIndex = 2;
+            this.buttonEliminarLibroAutor.Text = "Eliminar";
+            this.buttonEliminarLibroAutor.UseVisualStyleBackColor = true;
+            // 
+            // buttonEditarLibroAutor
+            // 
+            this.buttonEditarLibroAutor.Location = new System.Drawing.Point(291, 20);
+            this.buttonEditarLibroAutor.Name = "buttonEditarLibroAutor";
+            this.buttonEditarLibroAutor.Size = new System.Drawing.Size(75, 23);
+            this.buttonEditarLibroAutor.TabIndex = 1;
+            this.buttonEditarLibroAutor.Text = "Editar";
+            this.buttonEditarLibroAutor.UseVisualStyleBackColor = true;
+            // 
+            // buttonAgregarLibroAutor
+            // 
+            this.buttonAgregarLibroAutor.Location = new System.Drawing.Point(210, 20);
+            this.buttonAgregarLibroAutor.Name = "buttonAgregarLibroAutor";
+            this.buttonAgregarLibroAutor.Size = new System.Drawing.Size(75, 23);
+            this.buttonAgregarLibroAutor.TabIndex = 0;
+            this.buttonAgregarLibroAutor.Text = "Agregar";
+            this.buttonAgregarLibroAutor.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.textBoxBuscar);
+            this.groupBox2.Location = new System.Drawing.Point(12, 72);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(776, 60);
+            this.groupBox2.TabIndex = 29;
+            this.groupBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(268, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Buscar";
+            // 
+            // textBoxBuscar
+            // 
+            this.textBoxBuscar.Location = new System.Drawing.Point(314, 19);
+            this.textBoxBuscar.Name = "textBoxBuscar";
+            this.textBoxBuscar.Size = new System.Drawing.Size(118, 20);
+            this.textBoxBuscar.TabIndex = 0;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dataGridViewLibroAutor);
+            this.groupBox4.Location = new System.Drawing.Point(12, 206);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(776, 237);
+            this.groupBox4.TabIndex = 31;
+            this.groupBox4.TabStop = false;
+            // 
+            // dataGridViewLibroAutor
+            // 
+            this.dataGridViewLibroAutor.AllowUserToAddRows = false;
+            this.dataGridViewLibroAutor.AllowUserToDeleteRows = false;
+            this.dataGridViewLibroAutor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLibroAutor.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewLibroAutor.Location = new System.Drawing.Point(6, 9);
+            this.dataGridViewLibroAutor.MultiSelect = false;
+            this.dataGridViewLibroAutor.Name = "dataGridViewLibroAutor";
+            this.dataGridViewLibroAutor.ReadOnly = true;
+            this.dataGridViewLibroAutor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewLibroAutor.Size = new System.Drawing.Size(764, 222);
+            this.dataGridViewLibroAutor.TabIndex = 0;
+            // 
+            // FormLibrosAutores
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox4);
+            this.Name = "FormLibrosAutores";
+            this.Text = "FormLibrosAutores";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLibroAutor)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button buttonAtras;
+        private System.Windows.Forms.Button buttonEliminarLibroAutor;
+        private System.Windows.Forms.Button buttonEditarLibroAutor;
+        private System.Windows.Forms.Button buttonAgregarLibroAutor;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxBuscar;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView dataGridViewLibroAutor;
+    }
+}

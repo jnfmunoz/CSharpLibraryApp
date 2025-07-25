@@ -143,6 +143,18 @@
     <Compile Include="Genero\FormGeneros.Designer.cs">
       <DependentUpon>FormGeneros.cs</DependentUpon>
     </Compile>
+    <Compile Include="LibroAutor\FormLibroAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibroAutor\FormLibroAutor.Designer.cs">
+      <DependentUpon>FormLibroAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LibroAutor\FormLibrosAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibroAutor\FormLibrosAutores.Designer.cs">
+      <DependentUpon>FormLibrosAutores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Libro\FormLibro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +189,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Genero\FormGeneros.resx">
       <DependentUpon>FormGeneros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibroAutor\FormLibroAutor.resx">
+      <DependentUpon>FormLibroAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibroAutor\FormLibrosAutores.resx">
+      <DependentUpon>FormLibrosAutores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Libro\FormLibro.resx">
       <DependentUpon>FormLibro.cs</DependentUpon>

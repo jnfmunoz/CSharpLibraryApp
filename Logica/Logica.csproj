@@ -100,6 +100,7 @@
     <Compile Include="DTOs\AutorDTO.cs" />
     <Compile Include="DTOs\EditorialDTO.cs" />
     <Compile Include="DTOs\GeneroDTO.cs" />
+    <Compile Include="DTOs\LibroAutorDTO.cs" />
     <Compile Include="DTOs\LibroDTO.cs" />
     <Compile Include="Helpers\DataGridViewHelper.cs" />
     <Compile Include="LAutor.cs" />
@@ -107,15 +108,18 @@
     <Compile Include="LGenero.cs" />
     <Compile Include="Library\Librarys.cs" />
     <Compile Include="LLibro.cs" />
+    <Compile Include="LLibroAutor.cs" />
     <Compile Include="LPais.cs" />
     <Compile Include="Mappers\AutorMapper.cs" />
     <Compile Include="Mappers\EditorialMapper.cs" />
     <Compile Include="Mappers\GeneroMapper.cs" />
+    <Compile Include="Mappers\LibroAutorMapper.cs" />
     <Compile Include="Mappers\LibroMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AutorInputModel.cs" />
     <Compile Include="ViewModels\EditorialInputModel.cs" />
     <Compile Include="ViewModels\GeneroInputModel.cs" />
+    <Compile Include="ViewModels\LibroAutorInputModel.cs" />
     <Compile Include="ViewModels\LibroInputModel.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -58,3 +58,5 @@ C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.Genero.
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.Genero.FormGenero.resources
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.Autor.FormAutor.resources
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.Autor.FormAutores.resources
+C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.LibroAutor.FormLibroAutor.resources
+C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.LibroAutor.FormLibrosAutores.resources

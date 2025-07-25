@@ -101,7 +101,7 @@ namespace Logica
                                      a.ID.ToString().Contains(field) ||
                                      (a.Nombre != null && a.Nombre.ToLower().Contains(field)) ||
                                      (a.Pais != null && a.Pais.ToLower().Contains(field)) ||
-                                     //a.FechaNacimiento.ToString("dd/MM/yyyy").ToLower().Contains(field) || // búsqueda por fecha
+                                     a.FechaNacimiento.ToString("dd/MM/yyyy").ToLower().Contains(field) || // búsqueda por fecha
                                      a.FechaNacimiento.ToString("yyyy-MM-dd").ToLower().Contains(field))
                                   .ToList();
                     }

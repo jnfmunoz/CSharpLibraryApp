@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Google.Protobuf.WellKnownTypes;
+using Logica;
+using Logica.Mappers;
+using Logica.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +16,90 @@ namespace CSharpLibraryApp.Autor
 {
     public partial class FormAutor : Form
     {
+        private LAutor autor = new LAutor();
+        private AutorInputModel _inputModel = new AutorInputModel();
+        private int _idAutor = 0;
+
         public FormAutor()
         {
             InitializeComponent();
+            this.Load += FormAutor_Load;
+            LoadComboPais();
+        }
+
+        public FormAutor(int idAutor) : this()
+        { 
+            _idAutor = idAutor;
         }
 
         private void FormAutor_Load(object sender, EventArgs e)
         {
+            if (_idAutor > 0)
+            {
+                var autorEntity = autor.GetAutor(_idAutor);
 
+                if (autorEntity != null)
+                {
+                    _inputModel = AutorMapper.ToViewModel(autorEntity);
+                    MapToUI(_inputModel);
+
+                    autor.idAutor = _idAutor;
+                    autor.ChangeAction("update");
+                }
+                else
+                {
+                    MessageBox.Show("Autor no encontrado.");
+                    this.Close();
+                }
+            }
+            else
+            {
+                autor.ChangeAction("insert");
+            }
+        }
+
+        private void LoadComboPais()
+        {
+            LPais pais = new LPais();
+
+            comboBoxPais.DataSource = pais.GetPaises();
+            comboBoxPais.DisplayMember = "nombre";
+            comboBoxPais.ValueMember = "idPAIS";
+        }
+
+        private void MapToUI(AutorInputModel model)
+        {
+            textBoxNombre.Text = model.Nombre ?? "";
+            comboBoxPais.SelectedValue = model.Pais;
+            dateTimePickerFechaNacimiento.Value = model.FechaNacimiento;
+        }
+
+        private void MapFromUI(AutorInputModel model)
+        {
+            model.Nombre = textBoxNombre.Text.Trim();
+            model.Pais = Convert.ToInt32(comboBoxPais.SelectedValue);
+            model.FechaNacimiento = dateTimePickerFechaNacimiento.Value;
+        }
+
+        private async void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MapFromUI(_inputModel);
+
+                if (_inputModel.Pais == 0)
+                {
+                    MessageBox.Show("Selecciona un país válido");
+                    return;
+                }
+
+                await autor.SaveAutorAsync(_inputModel);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar autor: " + ex.Message);
+            }
         }
     }
 }
