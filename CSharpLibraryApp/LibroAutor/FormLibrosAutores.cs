@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Logica;
+using Logica.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,24 @@ namespace CSharpLibraryApp.LibroAutor
 {
     public partial class FormLibrosAutores : Form
     {
+        private LLibroAutor libroAutor;
         public FormLibrosAutores()
         {
             InitializeComponent();
+
+            Object[] obj =
+            {
+                dataGridViewLibroAutor
+            };
+
+            libroAutor = new LLibroAutor(obj);
+
+            this.Shown += async (s, e) =>
+            {
+                await libroAutor.ListLibroAutorAsync();
+            };
+
+            DataGridViewHelper.SetupDataGridViewDefaults(dataGridViewLibroAutor);
         }
     }
 }

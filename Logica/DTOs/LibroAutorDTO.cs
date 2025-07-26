@@ -9,7 +9,7 @@ namespace Logica.DTOs
     public class LibroAutorDTO
     {
         public int ID { get; set; }
-        public string Autor { get; set; }
         public string Libro { get; set; }            
+        public string Autor { get; set; }
     }
 }
