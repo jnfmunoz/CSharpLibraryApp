@@ -14,6 +14,7 @@ namespace Logica.Mappers
         {
             return new LibroAutorInputModel
             {
+                Id = libroAutor.idLIBROAUTOR,
                 Autor = libroAutor.AUTOR_idAUTOR,
                 Libro = libroAutor.LIBRO_idLIBRO
             };
@@ -23,6 +24,7 @@ namespace Logica.Mappers
         {
             return new LibroAutor
             {
+                idLIBROAUTOR = model.Id,
                 AUTOR_idAUTOR = model.Autor,
                 LIBRO_idLIBRO = model.Libro
             };

@@ -8,7 +8,8 @@ namespace Logica.DTOs
 {
     public class LibroAutorDTO
     {
-        public int Autor { get; set; }
-        public int Libro { get; set; }            
+        public int ID { get; set; }
+        public string Autor { get; set; }
+        public string Libro { get; set; }            
     }
 }

@@ -8,6 +8,7 @@ namespace Logica.ViewModels
 {
     public class LibroAutorInputModel
     {
+        public int Id { get; set; }
         public int Autor { get; set; }
         public int Libro { get; set; }
     }
