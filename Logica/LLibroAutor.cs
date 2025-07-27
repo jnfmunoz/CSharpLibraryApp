@@ -75,7 +75,8 @@ namespace Logica
                     var list = await GetLibrosAutoresAsync(db);
                     
                     _dataGridView.DataSource = list;
-                    DataGridViewHelper.AutoResizeColumns(_dataGridView);
+                    DataGridViewHelper.AutoResizeColumns(_dataGridView);                    
+                    DataGridViewHelper.SetupDataGridViewDefaults(_dataGridView);                    
                 }
             }
             catch (Exception ex)
@@ -94,16 +95,18 @@ namespace Logica
 
                     if (!string.IsNullOrWhiteSpace(field))
                     {
+                        var lowerField = field.ToLower();
                         librosAutores = librosAutores
                                         .Where(la =>
-                                            la.ID.ToString().Contains(field) ||
-                                            la.Libro != null && la.Libro.ToLower().Contains(field) ||
-                                            la.Autor != null && la.Autor.ToLower().Contains(field))
+                                            la.ID.ToString().Contains(lowerField) ||
+                                            la.Libro != null && la.Libro.ToLower().Contains(lowerField) ||
+                                            la.Autor != null && la.Autor.ToLower().Contains(lowerField))
                                         .ToList();
                     }
 
                     _dataGridView.DataSource = librosAutores;
                     DataGridViewHelper.AutoResizeColumns(_dataGridView);
+                    DataGridViewHelper.SetupDataGridViewDefaults(_dataGridView);
                 }
             }
             catch
@@ -180,7 +183,7 @@ namespace Logica
             {
                 return db._LibroAutor.FirstOrDefault(la => la.idLIBROAUTOR == idLibroAutor);
             }
-        }
+        }      
 
         public void GetLibroAutorSelected()
         {

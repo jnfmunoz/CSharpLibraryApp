@@ -104,6 +104,7 @@ namespace Logica
                     DataGridViewHelper.RenameHeaderTextAnioPublicacion(_dataGridView);
                     DataGridViewHelper.RenameHeaderTextAnioGenero(_dataGridView);
                     DataGridViewHelper.AutoResizeColumns(_dataGridView);
+                    DataGridViewHelper.SetupDataGridViewDefaults(_dataGridView);
                 }
             }
             catch (Exception ex)
@@ -122,17 +123,18 @@ namespace Logica
 
                     if (!string.IsNullOrWhiteSpace(field))
                     {
-                            libros = libros
-                                     .Where(l =>                            
-                                        l.ID.ToString().Contains(field) ||
-                                        (l.Titulo != null && l.Titulo.ToLower().Contains(field.ToLower())) ||
-                                        (l.ISBN != null && l.ISBN.ToLower().Contains(field.ToLower())) ||
-                                        l.AnioPublicacion.ToString().Contains(field) ||
-                                        (l.Sinopsis != null && l.Sinopsis.ToLower().Contains(field.ToLower())) ||
-                                        (l.Editorial != null && l.Editorial.ToLower().Contains(field.ToLower())) ||
-                                        (l.Genero != null && l.Genero.ToLower().Contains(field.ToLower())) ||
-                                        (l.Autor != null && l.Autor.ToLower().Contains(field.ToLower()))                            )
-							         .ToList();                        
+                        var lowerField = field.ToLower();
+                        libros = libros
+                                .Where(l =>                            
+                                    l.ID.ToString().Contains(field) ||
+                                    (l.Titulo != null && l.Titulo.ToLower().Contains(lowerField)) ||
+                                    (l.ISBN != null && l.ISBN.ToLower().Contains(lowerField)) ||
+                                    l.AnioPublicacion.ToString().Contains(field) ||
+                                    (l.Sinopsis != null && l.Sinopsis.ToLower().Contains(lowerField)) ||
+                                    (l.Editorial != null && l.Editorial.ToLower().Contains(lowerField)) ||
+                                    (l.Genero != null && l.Genero.ToLower().Contains(lowerField)) ||
+                                    (l.Autor != null && l.Autor.ToLower().Contains(lowerField))                            )
+							    .ToList();                        
                     }
 
                     _dataGridView.DataSource = libros;
@@ -140,6 +142,7 @@ namespace Logica
                     DataGridViewHelper.RenameHeaderTextAnioPublicacion(_dataGridView);
                     DataGridViewHelper.RenameHeaderTextAnioGenero(_dataGridView);
                     DataGridViewHelper.AutoResizeColumns(_dataGridView);
+                    DataGridViewHelper.SetupDataGridViewDefaults(_dataGridView);
                 }
             }
             catch (Exception ex)
@@ -223,6 +226,14 @@ namespace Logica
             using (var db = new Conexion())
             {
                 return db._Libro.FirstOrDefault(l => l.idLIBRO == idLibro);
+            }
+        }
+
+        public List <Libro> GetLibros()
+        {
+            using (var db = new Conexion())
+            {
+                return db.GetTable<Libro>().ToList();
             }
         }
 

@@ -188,6 +188,14 @@ namespace Logica
             }
         }
 
+        public List <Autor> GetAutores()
+        {
+            using (var db = new Conexion())
+            {
+                return db.GetTable<Autor>().ToList();
+            }
+        }
+
         public void GetAutorSelected()
         {
             if (_dataGridView.CurrentRow != null)

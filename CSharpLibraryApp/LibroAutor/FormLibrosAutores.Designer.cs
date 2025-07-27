@@ -94,6 +94,7 @@
             this.buttonEliminarLibroAutor.TabIndex = 2;
             this.buttonEliminarLibroAutor.Text = "Eliminar";
             this.buttonEliminarLibroAutor.UseVisualStyleBackColor = true;
+            this.buttonEliminarLibroAutor.Click += new System.EventHandler(this.buttonEliminarLibroAutor_Click);
             // 
             // buttonEditarLibroAutor
             // 
@@ -103,6 +104,7 @@
             this.buttonEditarLibroAutor.TabIndex = 1;
             this.buttonEditarLibroAutor.Text = "Editar";
             this.buttonEditarLibroAutor.UseVisualStyleBackColor = true;
+            this.buttonEditarLibroAutor.Click += new System.EventHandler(this.buttonEditarLibroAutor_Click);
             // 
             // buttonAgregarLibroAutor
             // 
@@ -112,6 +114,7 @@
             this.buttonAgregarLibroAutor.TabIndex = 0;
             this.buttonAgregarLibroAutor.Text = "Agregar";
             this.buttonAgregarLibroAutor.UseVisualStyleBackColor = true;
+            this.buttonAgregarLibroAutor.Click += new System.EventHandler(this.buttonAgregarLibroAutor_Click);
             // 
             // groupBox2
             // 
@@ -138,6 +141,7 @@
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(118, 20);
             this.textBoxBuscar.TabIndex = 0;
+            this.textBoxBuscar.TextChanged += new System.EventHandler(this.textBoxBuscar_TextChanged);
             // 
             // groupBox4
             // 

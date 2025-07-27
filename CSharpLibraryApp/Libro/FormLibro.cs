@@ -64,8 +64,7 @@ namespace CSharpLibraryApp.Libro
 
         private void LoadComboEditorial()
         {
-            LEditorial editorial = new LEditorial();
-            
+            LEditorial editorial = new LEditorial();            
             comboBoxEditorial.DataSource = editorial.GetEditoriales();            
             comboBoxEditorial.DisplayMember = "nombre";
             comboBoxEditorial.ValueMember = "idEDITORIAL";
@@ -74,7 +73,6 @@ namespace CSharpLibraryApp.Libro
         private void LoadComboGenero()
         {
             LGenero genero = new LGenero();
-
             comboBoxGenero.DataSource = genero.GetGeneros();
             comboBoxGenero.DisplayMember = "nombre";
             comboBoxGenero.ValueMember = "idGENERO";
@@ -97,8 +95,7 @@ namespace CSharpLibraryApp.Libro
             model.AnioPublicacion = Convert.ToInt32(textBoxAnioPublicacion.Text.Trim());
             model.Sinopsis = textBoxSinopsis.Text.Trim();
             model.EDITORIAL_idEDITORIAL = Convert.ToInt32(comboBoxEditorial.SelectedValue);
-            model.GENERO_idGENERO = Convert.ToInt32(comboBoxGenero.SelectedValue);
-            
+            model.GENERO_idGENERO = Convert.ToInt32(comboBoxGenero.SelectedValue);            
         }
 
         private async void buttonGuardar_Click(object sender, EventArgs e)
