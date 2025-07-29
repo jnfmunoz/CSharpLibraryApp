@@ -41,7 +41,6 @@ namespace CSharpLibraryApp.Libro
             if (_idLibro > 0)
             {
                 var libroEntity = libro.GetLibro(_idLibro);
-
                 if(libroEntity != null)
                 {
                     _inputModel = LibroMapper.ToViewModel(libroEntity);

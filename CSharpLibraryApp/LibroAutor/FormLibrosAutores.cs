@@ -50,7 +50,6 @@ namespace CSharpLibraryApp.LibroAutor
                 textBoxBuscar.Text = "";
                 await libroAutor.ListLibroAutorAsync();
             };
-
             form.Show();
         }
 
@@ -59,7 +58,7 @@ namespace CSharpLibraryApp.LibroAutor
             if (dataGridViewLibroAutor.CurrentRow != null) 
             {
                 int idLibroAutor = Convert.ToInt32(dataGridViewLibroAutor.CurrentRow.Cells[0].Value);
-                var form = new FormLibroAutor();
+                var form = new FormLibroAutor(idLibroAutor);
                 this.Hide();
 
                 form.FormClosed += async (s, args) =>

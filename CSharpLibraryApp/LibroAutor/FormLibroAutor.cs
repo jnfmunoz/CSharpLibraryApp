@@ -23,28 +23,46 @@ namespace CSharpLibraryApp.LibroAutor
         public FormLibroAutor()
         {
             InitializeComponent();
-            
+            this.Load += FormLibroAutor_Load;            
+
+            libroAutor = new LLibroAutor();
         }
 
-        public FormLibroAutor(int idLibroAutor) : this ()
+        public FormLibroAutor(int idLibroAutor) : this()
         {
             _idLibroAutor = idLibroAutor;
         }
 
         private void FormLibroAutor_Load(object sender, EventArgs e)
         {
-            if (_idLibroAutor == 0)
+            if (_idLibroAutor > 0)
             {
+                LoadComboLibro();
+                LoadComboAutor();
+
                 var libroAutorEntity = libroAutor.GetLibroAutor(_idLibroAutor);
-                if (libroAutorEntity != null) 
+                if (libroAutorEntity != null)
                 {
                     _inputModel = LibroAutorMapper.ToViewModel(libroAutorEntity);
-                    /* AQUI QUEDE */
+                    MapToUI(_inputModel);
+
+                    libroAutor.idLibroAutor = _idLibroAutor;
+                    libroAutor.ChangeAction("update");
+                }
+                else
+                {
+                    MessageBox.Show("Asociación Libro - Autor no encontrada.");
+                    this.Close();
                 }
             }
-
+            else
+            {
+                LoadComboLibroWithoutAutor();
+                LoadComboAutor();
+                libroAutor.ChangeAction("insert");
+            }
         }
-
+        
         private void LoadComboLibro()
         {
             LLibro libro = new LLibro();
@@ -53,12 +71,20 @@ namespace CSharpLibraryApp.LibroAutor
             comboBoxLibro.ValueMember = "idLIBRO";
         }
 
+        private void LoadComboLibroWithoutAutor()
+        {
+            LLibro libro = new LLibro();
+            comboBoxLibro.DataSource = libro.GetLibrosWithoutAutor();
+            comboBoxLibro.DisplayMember = "titulo";
+            comboBoxLibro.ValueMember = "idLIBRO";
+        }
+
         private void LoadComboAutor()
         {
             LAutor autor = new LAutor();
             comboBoxAutor.DataSource = autor.GetAutores();
-            comboBoxAutor.DisplayMember = "titulo";
-            comboBoxAutor.ValueMember = "idLIBRO";
+            comboBoxAutor.DisplayMember = "nombre";
+            comboBoxAutor.ValueMember = "idAUTOR";
         }
 
         private void MapToUI(LibroAutorInputModel model)
@@ -73,6 +99,26 @@ namespace CSharpLibraryApp.LibroAutor
             model.Autor = Convert.ToInt32(comboBoxAutor.SelectedValue);
         }
 
+        private async void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MapFromUI(_inputModel);
 
+                if (_inputModel.Libro == 0 || _inputModel.Autor == 0)
+                {
+                    MessageBox.Show("Selecciona un libro y un autor válidos.");
+                    return;
+                }
+
+                await libroAutor.SaveLibroAutor(_inputModel);
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar asociación Libro - Autor: " + ex.Message);
+            }
+        }
     }
 }

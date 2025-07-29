@@ -237,6 +237,17 @@ namespace Logica
             }
         }
 
+        public List<Libro> GetLibrosWithoutAutor()
+        {
+            using (var db = new Conexion())
+            {
+                var librosWithoutAutor = db._Libro
+                                           .Where(l => !db._LibroAutor.Any(la => la.LIBRO_idLIBRO == l.idLIBRO))
+                                           .ToList();
+                return librosWithoutAutor;
+            }
+        }
+
         public void GetLibroSelected()
         {
             if (_dataGridView.CurrentRow != null) 

@@ -157,12 +157,12 @@ namespace Logica
 
             if (_idLibroAutor.Equals(0))
             {
-                MessageBox.Show("Selecciona un Libro - Autor!");
+                MessageBox.Show("Selecciona una asociación Libro - Autor para eliminar");
             }
             else
             {
                 if (MessageBox.Show("Estás seguro de eliminar asociación Libro - Autor?",
-                    "Eliiminar asociación Libro - Autor",
+                    "Eliminar asociación Libro - Autor",
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     using (var db = new Conexion())

@@ -35,10 +35,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.labelAutor = new System.Windows.Forms.Label();
-            this.labelLibro = new System.Windows.Forms.Label();
-            this.comboBoxLibro = new System.Windows.Forms.ComboBox();
             this.comboBoxAutor = new System.Windows.Forms.ComboBox();
+            this.comboBoxLibro = new System.Windows.Forms.ComboBox();
+            this.labelLibro = new System.Windows.Forms.Label();
+            this.labelAutor = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -52,6 +52,7 @@
             this.buttonGuardar.TabIndex = 3;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // buttonLimpiar
             // 
@@ -112,14 +113,21 @@
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             // 
-            // labelAutor
+            // comboBoxAutor
             // 
-            this.labelAutor.AutoSize = true;
-            this.labelAutor.Location = new System.Drawing.Point(284, 90);
-            this.labelAutor.Name = "labelAutor";
-            this.labelAutor.Size = new System.Drawing.Size(32, 13);
-            this.labelAutor.TabIndex = 0;
-            this.labelAutor.Text = "Autor";
+            this.comboBoxAutor.FormattingEnabled = true;
+            this.comboBoxAutor.Location = new System.Drawing.Point(322, 90);
+            this.comboBoxAutor.Name = "comboBoxAutor";
+            this.comboBoxAutor.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxAutor.TabIndex = 3;
+            // 
+            // comboBoxLibro
+            // 
+            this.comboBoxLibro.FormattingEnabled = true;
+            this.comboBoxLibro.Location = new System.Drawing.Point(322, 63);
+            this.comboBoxLibro.Name = "comboBoxLibro";
+            this.comboBoxLibro.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxLibro.TabIndex = 2;
             // 
             // labelLibro
             // 
@@ -130,21 +138,14 @@
             this.labelLibro.TabIndex = 1;
             this.labelLibro.Text = "Libro";
             // 
-            // comboBoxLibro
+            // labelAutor
             // 
-            this.comboBoxLibro.FormattingEnabled = true;
-            this.comboBoxLibro.Location = new System.Drawing.Point(322, 63);
-            this.comboBoxLibro.Name = "comboBoxLibro";
-            this.comboBoxLibro.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxLibro.TabIndex = 2;
-            // 
-            // comboBoxAutor
-            // 
-            this.comboBoxAutor.FormattingEnabled = true;
-            this.comboBoxAutor.Location = new System.Drawing.Point(322, 90);
-            this.comboBoxAutor.Name = "comboBoxAutor";
-            this.comboBoxAutor.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxAutor.TabIndex = 3;
+            this.labelAutor.AutoSize = true;
+            this.labelAutor.Location = new System.Drawing.Point(284, 90);
+            this.labelAutor.Name = "labelAutor";
+            this.labelAutor.Size = new System.Drawing.Size(32, 13);
+            this.labelAutor.TabIndex = 0;
+            this.labelAutor.Text = "Autor";
             // 
             // FormLibroAutor
             // 
