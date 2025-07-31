@@ -17,11 +17,12 @@ namespace CSharpLibraryApp.LibroAutor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new FormMenu());
             //Application.Run(new FormGeneros());
             //Application.Run(new FormAutores());
             //Application.Run(new FormEditoriales());
             //Application.Run(new FormLibros());
-            Application.Run(new FormLibrosAutores());
+            //Application.Run(new FormLibrosAutores());
         }
     }
 }

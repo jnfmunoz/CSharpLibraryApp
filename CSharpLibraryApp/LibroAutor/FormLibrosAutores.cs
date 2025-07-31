@@ -31,7 +31,7 @@ namespace CSharpLibraryApp.LibroAutor
                 await libroAutor.ListLibroAutorAsync();
             };
 
-            DataGridViewHelper.SetupDataGridViewDefaults(dataGridViewLibroAutor);
+            //DataGridViewHelper.SetupDataGridViewDefaults(dataGridViewLibroAutor);
         }
 
         private async void textBoxBuscar_TextChanged(object sender, EventArgs e)

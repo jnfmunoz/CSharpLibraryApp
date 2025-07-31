@@ -46,7 +46,6 @@ C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.Autor.F
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.Autor.FormAutores.resources
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.Editorial.FormEditorial.resources
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.Editorial.FormEditoriales.resources
-C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.FormMenu.resources
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.Genero.FormGenero.resources
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.Genero.FormGeneros.resources
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.LibroAutor.FormLibroAutor.resources
@@ -60,3 +59,7 @@ C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLi.A8D0DF5A.Up2Dat
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.exe
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.pdb
 C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.exe.config
+C:\projects\CSharpLibraryApp\CSharpLibraryApp\bin\Debug\MetroFramework.Design.dll
+C:\projects\CSharpLibraryApp\CSharpLibraryApp\bin\Debug\MetroFramework.dll
+C:\projects\CSharpLibraryApp\CSharpLibraryApp\bin\Debug\MetroFramework.Fonts.dll
+C:\projects\CSharpLibraryApp\CSharpLibraryApp\obj\Debug\CSharpLibraryApp.FormMenu.resources
