@@ -1,4 +1,5 @@
-﻿using CSharpLibraryApp.Libro;
+﻿using CSharpLibraryApp.Helpers;
+using CSharpLibraryApp.Libro;
 using Data;
 using Logica;
 using Logica.Helpers;
@@ -14,12 +15,24 @@ using System.Windows.Forms;
 
 namespace CSharpLibraryApp.Autor
 {
-    public partial class FormAutores : Form
+    public partial class FormAutores : MetroFramework.Forms.MetroForm
     {
         private LAutor autor;
         public FormAutores()
         {
             InitializeComponent();
+
+            LabelHelper.BindClickToButton(labelAgregar, metroButtonAgregar);
+            LabelHelper.BindClickAndFocus(labelAgregar, metroButtonAgregar);
+
+            LabelHelper.BindClickToButton(labelEditar, metroButtonEditar);
+            LabelHelper.BindClickAndFocus(labelEditar, metroButtonEditar);
+
+            LabelHelper.BindClickToButton(labelEliminar, metroButtonEliminar);
+            LabelHelper.BindClickAndFocus(labelEliminar, metroButtonEliminar);
+
+            LabelHelper.BindClickToButton(labelAtras, metroButtonAtras);
+            LabelHelper.BindClickAndFocus(labelAtras, metroButtonAtras);
 
             Object[] obj =
             {
@@ -41,7 +54,7 @@ namespace CSharpLibraryApp.Autor
             await autor.SearchAutorAsync(textBoxBuscar.Text.Trim());
         }
 
-        private void buttonAgregarAutor_Click(object sender, EventArgs e)
+        private void metroButtonAgregar_Click(object sender, EventArgs e)
         {
             this.Hide();
 
@@ -56,7 +69,7 @@ namespace CSharpLibraryApp.Autor
             form.Show();
         }
 
-        private void buttonEditarAutor_Click(object sender, EventArgs e)
+        private void metroButtonEditar_Click(object sender, EventArgs e)
         {
             if (dataGridViewAutor.CurrentRow != null)
             {
@@ -78,7 +91,7 @@ namespace CSharpLibraryApp.Autor
             }
         }
 
-        private async void buttonEliminarAutor_Click(object sender, EventArgs e)
+        private async void metroButtonEliminar_Click(object sender, EventArgs e)
         {
             await autor.DeleteAutorAsync();
         }

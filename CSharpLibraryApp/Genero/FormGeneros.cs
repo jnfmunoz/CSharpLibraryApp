@@ -1,4 +1,5 @@
-﻿using Logica;
+﻿using CSharpLibraryApp.Helpers;
+using Logica;
 using Logica.Helpers;
 using System;
 using System.Collections.Generic;
@@ -13,12 +14,24 @@ using System.Windows.Forms;
 
 namespace CSharpLibraryApp.Genero
 {
-    public partial class FormGeneros : Form
+    public partial class FormGeneros : MetroFramework.Forms.MetroForm
     {
         private LGenero genero;
         public FormGeneros()
         {
             InitializeComponent();
+
+            LabelHelper.BindClickToButton(labelAgregar, metroButtonAgregar);
+            LabelHelper.BindClickAndFocus(labelAgregar, metroButtonAgregar);
+
+            LabelHelper.BindClickToButton(labelEditar, metroButtonEditar);
+            LabelHelper.BindClickAndFocus(labelEditar, metroButtonEditar);
+
+            LabelHelper.BindClickToButton(labelEliminar, metroButtonEliminar);
+            LabelHelper.BindClickAndFocus(labelEliminar, metroButtonEliminar);
+
+            LabelHelper.BindClickToButton(labelAtras, metroButtonAtras);
+            LabelHelper.BindClickAndFocus(labelAtras, metroButtonAtras);
 
             Object[] obj =
             {
@@ -34,13 +47,7 @@ namespace CSharpLibraryApp.Genero
 
             DataGridViewHelper.SetupDataGridViewDefaults(dataGridViewGenero);
         }
-
-        private async void textBoxBuscar_TextChanged(object sender, EventArgs e)
-        {
-            await genero.SearchGeneroAsync(textBoxBuscar.Text.Trim());
-        }
-
-        private void buttonAgregarGenero_Click(object sender, EventArgs e)
+        private void metroButtonAgregar_Click(object sender, EventArgs e)
         {
             this.Hide();
 
@@ -55,7 +62,7 @@ namespace CSharpLibraryApp.Genero
             form.Show();
         }
 
-        private void buttonEditarGenero_Click(object sender, EventArgs e)
+        private void metroButtonEditar_Click(object sender, EventArgs e)
         {
             if (dataGridViewGenero.CurrentRow != null)
             {
@@ -77,9 +84,14 @@ namespace CSharpLibraryApp.Genero
             }
         }
 
-        private async void buttonEliminarGenero_Click(object sender, EventArgs e)
+        private async void metroButtonEliminar_Click(object sender, EventArgs e)
         {
             await genero.DeleteGeneroAsync();
+        }
+
+        private async void textBoxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            await genero.SearchGeneroAsync(textBoxBuscar.Text.Trim());
         }
     }
 }

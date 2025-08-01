@@ -1,4 +1,5 @@
-﻿using Logica;
+﻿using CSharpLibraryApp.Helpers;
+using Logica;
 using Logica.Helpers;
 using System;
 using System.Collections.Generic;
@@ -12,12 +13,24 @@ using System.Windows.Forms;
 
 namespace CSharpLibraryApp.Editorial
 {
-    public partial class FormEditoriales : Form
+    public partial class FormEditoriales : MetroFramework.Forms.MetroForm
     {
         private LEditorial editorial;
         public FormEditoriales()
         {
             InitializeComponent();
+
+            LabelHelper.BindClickToButton(labelAgregar, metroButtonAgregar);
+            LabelHelper.BindClickAndFocus(labelAgregar, metroButtonAgregar);
+
+            LabelHelper.BindClickToButton(labelEditar, metroButtonEditar);
+            LabelHelper.BindClickAndFocus(labelEditar, metroButtonEditar);
+
+            LabelHelper.BindClickToButton(labelEliminar, metroButtonEliminar);
+            LabelHelper.BindClickAndFocus(labelEliminar, metroButtonEliminar);
+
+            LabelHelper.BindClickToButton(labelAtras, metroButtonAtras);
+            LabelHelper.BindClickAndFocus(labelAtras, metroButtonAtras);
 
             Object[] obj =
             {
@@ -39,7 +52,7 @@ namespace CSharpLibraryApp.Editorial
             await editorial.SearchEditorialAsync(textBoxBuscar.Text.Trim());
         }
 
-        private void buttonAgregarEditorial_Click(object sender, EventArgs e)
+        private void metroButtonAgregar_Click(object sender, EventArgs e)
         {
             this.Hide();
 
@@ -53,7 +66,7 @@ namespace CSharpLibraryApp.Editorial
             form.Show();
         }
 
-        private void buttonEditarEditorial_Click(object sender, EventArgs e)
+        private void metroButtonEditar_Click(object sender, EventArgs e)
         {
             if (dataGridViewEditorial.CurrentRow != null)
             {
@@ -69,13 +82,13 @@ namespace CSharpLibraryApp.Editorial
                 };
                 form.Show();
             }
-            else 
+            else
             {
                 MessageBox.Show("Selecciona una editorial");
             }
         }
 
-        private async void buttonEliminarEditorial_Click(object sender, EventArgs e)
+        private async void metroButtonEliminar_Click(object sender, EventArgs e)
         {
             await editorial.DeleteEditorialAsync();
         }
