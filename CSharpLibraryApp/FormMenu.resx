@@ -121,7 +121,7 @@
   <data name="metroButtonLibro.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANgAAABxCAYAAAC3M23LAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAkLSURBVHhe7d1tiBVVHMfx3vai
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADr4AAA6+AepCscAAAAkLSURBVHhe7d1tiBVVHMfx3vai
         F70IehERSUQUFAUKQhESCUlBYlBQ4AvRQLIwUUFiYdFiCSPJIhFLpExF1FhSWHpglWSpNGpJTBCxpMwe
         RHrGYOJ3l1n/M/ufvXPvzJk7c/f74gPr3plzzo39NWfOnDnnqhuvXhoBCIOAAQERMCAgAgYERMCAgAgY
         EBABAwIiYEBABAwIiIABAREwICACBgREwICACBgQEAEDAiJgfeLe29dFg2v2RKMj49HZ0z9Fq5Ztd49D
@@ -166,7 +166,7 @@
   <data name="metroButtonGenero.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANgAAABxCAYAAAC3M23LAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADr8AAA6/ATgFUyQAAARcSURBVHhe7dpPiE1hGMdxWwsL
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADr4AAA6+AepCscAAAARcSURBVHhe7dpPiE1hGMdxWwsL
         C2UlKUkpRVlYSFIWSpGFpYVmlPwpU5SkJLKwkEkkJYXIQgllI2xEWEihJk0mf9Mk/6NevYtT4plxzn3P
         83Om57v4bO4998x96v125773nTRjcl8C4IPAAEcEBjgiMMARgQGOCAxwRGCAIwIDHBEY4IjAAEcEBjgi
         MMARgQGOCAxwRGCAIwIrtHDmQNqwdjCdPXkzvX09mn7++NFJL4bfpZvXH6XTx2+kvTsupFVLDpjzoF0E
@@ -191,7 +191,7 @@
   <data name="metroButtonEditorial.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANgAAABxCAYAAAC3M23LAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADr8AAA6/ATgFUyQAAASySURBVHhe7d3Pqw1hHMdxW3+A
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADr4AAA6+AepCscAAAASySURBVHhe7d3Pqw1hHMdxW3+A
         rexusmOn7GRnqSzY6VrIRoqyUHaSoqR0S5bYYIG6xYKUDSWRlHRzy++rm/yKOnpuTXk+z+OemfnOd86Z
         mffitZm+85xzat49dc+cuWvWr50dAfBBYIAjAgMcERjgiMAARwQGOCIwwBGBAY4IDHBEYIAjAgMcERjg
         iMAARwQGOCIwwBGBteDQvoujP79/RxZevc/Ool8IrAUENlwE1gICGy4CawGBDReBtYDAhovAWkBgw0Vg
@@ -218,7 +218,7 @@
   <data name="metroButtonLibroAutor.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAL4AAADoCAIAAADewckgAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAAAzESURBVHhe7d1baBTXHwfwvvbB
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAzESURBVHhe7d1baBTXHwfwvvbB
         Bx8EH+SPKCJSQVFQCFQkiIKiYKigUCEP0gjBCzFoIEhg8cIiEYMXlGAN4i1hqUpQIVhLFEPQqlQxaGAp
         0aC13ghW22If/l+YMkx/szO7+5vZ3TlnvvBBZHf2nOOer+cyszv7xf++/I5IgdEhJUaHlBgdUmJ0SInR
         ISVGh5QYHVJidEiJ0SElRoeUGB1SYnRIidEhJUaHlBgdUmJ0SInRISVG51+zJjdvWHkws6vveOe1ixeG
@@ -279,7 +279,7 @@
   <data name="metroButtonAutor.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANgAAABxCAYAAAC3M23LAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAfwSURBVHhe7d1bqBVVHMfxXnvo
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADr4AAA6+AepCscAAAAfwSURBVHhe7d1bqBVVHMfxXnvo
         oYegh4goIqKgKCgQipAwMAqShIQCH8QC6YJFCRKCdOEgSpJFIl2Q7kgXpAQpRUMRK6VEMeEQlnQvke4Y
         TPw2TExz/vuy1pr/7DX7fB8+UDgz+wysH7NmzVr/dcb5Zy4tAPggYIAjAgY4ImCAIwIGOCJggCMCBjgi
         YIAjAgY4ImCAIwIGOCJggCMCBjgiYIAjAgY4ImAdsXDemuLt1/cV11220vx35ImAdcTB/dPFP6dPF7//

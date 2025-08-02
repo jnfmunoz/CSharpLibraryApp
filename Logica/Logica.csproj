@@ -103,6 +103,7 @@
     <Compile Include="DTOs\LibroAutorDTO.cs" />
     <Compile Include="DTOs\LibroDTO.cs" />
     <Compile Include="Helpers\DataGridViewHelper.cs" />
+    <Compile Include="Helpers\NavigationHelper.cs" />
     <Compile Include="LAutor.cs" />
     <Compile Include="LEditorial.cs" />
     <Compile Include="LGenero.cs" />

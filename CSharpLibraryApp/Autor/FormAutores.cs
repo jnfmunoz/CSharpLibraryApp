@@ -44,11 +44,10 @@ namespace CSharpLibraryApp.Autor
             this.Shown += async (s, e) =>
             {
                 await autor.ListAutorAsync();
+                DataGridViewHelper.SetupDataGridViewDefaults(dataGridViewAutor);    
             };
-
-            DataGridViewHelper.SetupDataGridViewDefaults(dataGridViewAutor);
-        }
-
+        } 
+        
         private async void textBoxBuscar_TextChanged(object sender, EventArgs e)
         {
             await autor.SearchAutorAsync(textBoxBuscar.Text.Trim());
@@ -94,6 +93,11 @@ namespace CSharpLibraryApp.Autor
         private async void metroButtonEliminar_Click(object sender, EventArgs e)
         {
             await autor.DeleteAutorAsync();
+        }
+
+        private void metroButtonAtras_Click(object sender, EventArgs e)
+        {
+            NavigationHelper.BackTo(this, new FormMenu());
         }
     }
 }

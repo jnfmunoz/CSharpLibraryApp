@@ -42,11 +42,14 @@ namespace CSharpLibraryApp.Editorial
             this.Shown += async (s, e) =>
             {
                 await editorial.ListEditorialAsync();
+                DataGridViewHelper.SetupDataGridViewDefaults(dataGridViewEditorial);            
             };
-
-            DataGridViewHelper.SetupDataGridViewDefaults(dataGridViewEditorial);            
         }
 
+        private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
         private async void textBoxBuscar_TextChanged(object sender, EventArgs e)
         {
             await editorial.SearchEditorialAsync(textBoxBuscar.Text.Trim());
@@ -91,6 +94,11 @@ namespace CSharpLibraryApp.Editorial
         private async void metroButtonEliminar_Click(object sender, EventArgs e)
         {
             await editorial.DeleteEditorialAsync();
+        }
+
+        private void metroButtonAtras_Click(object sender, EventArgs e)
+        {
+            NavigationHelper.BackTo(this, new FormMenu());
         }
     }
 }

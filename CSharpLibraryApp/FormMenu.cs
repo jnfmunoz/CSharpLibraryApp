@@ -39,6 +39,11 @@ namespace CSharpLibraryApp
 
         }
 
+        private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void metroButtonAutor_Click(object sender, EventArgs e)
         {
             this.Hide();

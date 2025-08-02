@@ -43,10 +43,10 @@ namespace CSharpLibraryApp.Genero
             this.Shown += async (s, e) =>
             {
                 await genero.ListGeneroAsync();
+                DataGridViewHelper.SetupDataGridViewDefaults(dataGridViewGenero);
             };
-
-            DataGridViewHelper.SetupDataGridViewDefaults(dataGridViewGenero);
         }
+
         private void metroButtonAgregar_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -92,6 +92,11 @@ namespace CSharpLibraryApp.Genero
         private async void textBoxBuscar_TextChanged(object sender, EventArgs e)
         {
             await genero.SearchGeneroAsync(textBoxBuscar.Text.Trim());
+        }
+
+        private void metroButtonAtras_Click(object sender, EventArgs e)
+        {
+            NavigationHelper.BackTo(this, new FormMenu());
         }
     }
 }

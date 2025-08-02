@@ -58,7 +58,7 @@
             this.dataGridViewLibroAutor.ReadOnly = true;
             this.dataGridViewLibroAutor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewLibroAutor.Size = new System.Drawing.Size(635, 160);
-            this.dataGridViewLibroAutor.TabIndex = 0;
+            this.dataGridViewLibroAutor.TabIndex = 5;
             // 
             // textBoxBuscar
             // 
@@ -160,7 +160,7 @@
             this.metroButtonEliminar.Name = "metroButtonEliminar";
             this.metroButtonEliminar.Size = new System.Drawing.Size(105, 60);
             this.metroButtonEliminar.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroButtonEliminar.TabIndex = 7;
+            this.metroButtonEliminar.TabIndex = 3;
             this.metroButtonEliminar.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.metroButtonEliminar.UseCustomBackColor = true;
             this.metroButtonEliminar.UseSelectable = true;
@@ -177,10 +177,11 @@
             this.metroButtonAtras.Name = "metroButtonAtras";
             this.metroButtonAtras.Size = new System.Drawing.Size(115, 60);
             this.metroButtonAtras.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroButtonAtras.TabIndex = 6;
+            this.metroButtonAtras.TabIndex = 4;
             this.metroButtonAtras.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.metroButtonAtras.UseCustomBackColor = true;
             this.metroButtonAtras.UseSelectable = true;
+            this.metroButtonAtras.Click += new System.EventHandler(this.metroButtonAtras_Click);
             // 
             // metroButtonEditar
             // 
@@ -193,7 +194,7 @@
             this.metroButtonEditar.Name = "metroButtonEditar";
             this.metroButtonEditar.Size = new System.Drawing.Size(115, 60);
             this.metroButtonEditar.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroButtonEditar.TabIndex = 5;
+            this.metroButtonEditar.TabIndex = 2;
             this.metroButtonEditar.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.metroButtonEditar.UseCustomBackColor = true;
             this.metroButtonEditar.UseSelectable = true;
@@ -210,7 +211,7 @@
             this.metroButtonAgregar.Name = "metroButtonAgregar";
             this.metroButtonAgregar.Size = new System.Drawing.Size(115, 60);
             this.metroButtonAgregar.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroButtonAgregar.TabIndex = 4;
+            this.metroButtonAgregar.TabIndex = 1;
             this.metroButtonAgregar.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.metroButtonAgregar.UseCustomBackColor = true;
             this.metroButtonAgregar.UseSelectable = true;

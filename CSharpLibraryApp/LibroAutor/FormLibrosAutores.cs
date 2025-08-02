@@ -42,10 +42,15 @@ namespace CSharpLibraryApp.LibroAutor
             this.Shown += async (s, e) =>
             {
                 await libroAutor.ListLibroAutorAsync();
+                DataGridViewHelper.SetupDataGridViewDefaults(dataGridViewLibroAutor);
             };
-
-            DataGridViewHelper.SetupDataGridViewDefaults(dataGridViewLibroAutor);
         }
+
+        private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private async void textBoxBuscar_TextChanged(object sender, EventArgs e)
         {
             await libroAutor.SearchLibroAutorAsync(textBoxBuscar.Text.Trim());
@@ -92,5 +97,9 @@ namespace CSharpLibraryApp.LibroAutor
             await libroAutor.DeleteLibroAutorAsync();
         }
 
+        private void metroButtonAtras_Click(object sender, EventArgs e)
+        {
+            NavigationHelper.BackTo(this, new FormMenu());
+        }
     }
 }

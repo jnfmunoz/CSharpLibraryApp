@@ -45,6 +45,5 @@ namespace Logica.Helpers
         {
             dgv.Columns["Genero"].HeaderText = "Género";
         }
-
     }
 }

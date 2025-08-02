@@ -98,7 +98,7 @@
             this.metroButtonLibro.Name = "metroButtonLibro";
             this.metroButtonLibro.Size = new System.Drawing.Size(216, 113);
             this.metroButtonLibro.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroButtonLibro.TabIndex = 11;
+            this.metroButtonLibro.TabIndex = 3;
             this.metroButtonLibro.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.metroButtonLibro.UseCustomBackColor = true;
             this.metroButtonLibro.UseSelectable = true;
@@ -127,7 +127,7 @@
             this.metroButtonGenero.Name = "metroButtonGenero";
             this.metroButtonGenero.Size = new System.Drawing.Size(216, 113);
             this.metroButtonGenero.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroButtonGenero.TabIndex = 9;
+            this.metroButtonGenero.TabIndex = 2;
             this.metroButtonGenero.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.metroButtonGenero.UseCustomBackColor = true;
             this.metroButtonGenero.UseSelectable = true;
@@ -156,7 +156,7 @@
             this.metroButtonEditorial.Name = "metroButtonEditorial";
             this.metroButtonEditorial.Size = new System.Drawing.Size(216, 113);
             this.metroButtonEditorial.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroButtonEditorial.TabIndex = 7;
+            this.metroButtonEditorial.TabIndex = 1;
             this.metroButtonEditorial.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.metroButtonEditorial.UseCustomBackColor = true;
             this.metroButtonEditorial.UseSelectable = true;
@@ -183,7 +183,7 @@
             this.metroButtonLibroAutor.Location = new System.Drawing.Point(458, 68);
             this.metroButtonLibroAutor.Name = "metroButtonLibroAutor";
             this.metroButtonLibroAutor.Size = new System.Drawing.Size(190, 232);
-            this.metroButtonLibroAutor.TabIndex = 5;
+            this.metroButtonLibroAutor.TabIndex = 4;
             this.metroButtonLibroAutor.UseSelectable = true;
             this.metroButtonLibroAutor.Click += new System.EventHandler(this.metroButtonLibroAutor_Click);
             // 
@@ -224,7 +224,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormMenu";
             this.Style = MetroFramework.MetroColorStyle.White;
-            this.Text = "Menú";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

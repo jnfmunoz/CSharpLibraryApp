@@ -181,6 +181,7 @@
             this.metroButtonAtras.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.metroButtonAtras.UseCustomBackColor = true;
             this.metroButtonAtras.UseSelectable = true;
+            this.metroButtonAtras.Click += new System.EventHandler(this.metroButtonAtras_Click);
             // 
             // metroButtonEditar
             // 

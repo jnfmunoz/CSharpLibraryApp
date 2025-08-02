@@ -43,9 +43,13 @@ namespace CSharpLibraryApp.Libro
             this.Shown += async (s, e) =>
             {
                 await libro.ListLibroAsync();
+                DataGridViewHelper.SetupDataGridViewDefaults(dataGridViewLibro);
             };
+        }
 
-            DataGridViewHelper.SetupDataGridViewDefaults(dataGridViewLibro);
+        private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
         private async void textBoxBuscar_TextChanged(object sender, EventArgs e)
@@ -93,6 +97,11 @@ namespace CSharpLibraryApp.Libro
         private async void metroButtonEliminar_Click(object sender, EventArgs e)
         {
             await libro.DeleteLibroAsync();
+        }
+
+        private void metroButtonAtras_Click(object sender, EventArgs e)
+        {
+            NavigationHelper.BackTo(this, new FormMenu());
         }
     }
 }

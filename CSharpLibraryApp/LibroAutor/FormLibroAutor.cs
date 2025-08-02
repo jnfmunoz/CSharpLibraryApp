@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace CSharpLibraryApp.LibroAutor
 {        
-    public partial class FormLibroAutor : Form
+    public partial class FormLibroAutor : MetroFramework.Forms.MetroForm
     {
         private LLibroAutor libroAutor;
         private LibroAutorInputModel _inputModel = new LibroAutorInputModel();

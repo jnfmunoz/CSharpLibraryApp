@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace CSharpLibraryApp.Editorial
 {
-    public partial class FormEditorial : Form
+    public partial class FormEditorial : MetroFramework.Forms.MetroForm
     {
         private LEditorial editorial = new LEditorial();
         private EditorialInputModel _inputModel = new EditorialInputModel();

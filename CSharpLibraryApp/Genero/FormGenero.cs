@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace CSharpLibraryApp.Genero
 {
-    public partial class FormGenero : Form
+    public partial class FormGenero : MetroFramework.Forms.MetroForm
     {
         private LGenero genero = new LGenero();
         private GeneroInputModel _inputModel = new GeneroInputModel();
