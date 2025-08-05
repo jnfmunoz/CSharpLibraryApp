@@ -72,6 +72,7 @@
             this.metroButtonGuardar.UseCustomBackColor = true;
             this.metroButtonGuardar.UseCustomForeColor = true;
             this.metroButtonGuardar.UseSelectable = true;
+            this.metroButtonGuardar.Click += new System.EventHandler(this.metroButtonGuardar_Click);
             // 
             // metroButtonCancelar
             // 

@@ -99,7 +99,7 @@ namespace CSharpLibraryApp.LibroAutor
             model.Autor = Convert.ToInt32(comboBoxAutor.SelectedValue);
         }
 
-        private async void buttonGuardar_Click(object sender, EventArgs e)
+        private async void metroButtonGuardar_Click(object sender, EventArgs e)
         {
             try
             {

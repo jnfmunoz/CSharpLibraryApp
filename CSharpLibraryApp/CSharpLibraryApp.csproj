@@ -153,6 +153,7 @@
       <DependentUpon>FormGeneros.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\LabelHelper.cs" />
+    <Compile Include="Helpers\MetroMessageHelper.cs" />
     <Compile Include="LibroAutor\FormLibroAutor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +180,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\MetroPrimaryButtoncs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MetroPrimaryButtoncs.Designer.cs">
+      <DependentUpon>MetroPrimaryButtoncs.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Autor\FormAutor.resx">
       <DependentUpon>FormAutor.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +228,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\MetroPrimaryButtoncs.resx">
+      <DependentUpon>MetroPrimaryButtoncs.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

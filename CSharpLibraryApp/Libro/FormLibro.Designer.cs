@@ -35,15 +35,15 @@
             this.textBoxIsbn = new System.Windows.Forms.TextBox();
             this.textBoxTitulo = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.metroButtonGuardar = new MetroFramework.Controls.MetroButton();
             this.metroButtonCancelar = new MetroFramework.Controls.MetroButton();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,6 +121,61 @@
             this.panel1.Size = new System.Drawing.Size(662, 335);
             this.panel1.TabIndex = 14;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(173, 251);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 19);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Género";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(169, 220);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 19);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Editorial";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(169, 162);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 19);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Sinopsis";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(102, 134);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(125, 19);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Año de publicación";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(189, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 19);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "ISBN";
+            // 
             // metroButtonGuardar
             // 
             this.metroButtonGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -135,6 +190,7 @@
             this.metroButtonGuardar.UseCustomBackColor = true;
             this.metroButtonGuardar.UseCustomForeColor = true;
             this.metroButtonGuardar.UseSelectable = true;
+            this.metroButtonGuardar.Click += new System.EventHandler(this.metroButtonGuardar_Click);
             // 
             // metroButtonCancelar
             // 
@@ -172,61 +228,6 @@
             this.label1.Size = new System.Drawing.Size(136, 65);
             this.label1.TabIndex = 1;
             this.label1.Text = "Libro";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(189, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 19);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "ISBN";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(102, 134);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 19);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Año de publicación";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(169, 162);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 19);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Sinopsis";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(169, 220);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 19);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Editorial";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(173, 251);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 19);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Género";
             // 
             // FormLibro
             // 

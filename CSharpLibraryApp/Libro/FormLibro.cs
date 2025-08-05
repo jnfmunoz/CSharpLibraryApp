@@ -97,7 +97,7 @@ namespace CSharpLibraryApp.Libro
             model.GENERO_idGENERO = Convert.ToInt32(comboBoxGenero.SelectedValue);            
         }
 
-        private async void buttonGuardar_Click(object sender, EventArgs e)
+        private async void metroButtonGuardar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -117,6 +117,6 @@ namespace CSharpLibraryApp.Libro
             {
                 MessageBox.Show("Error al guardar libro: " + ex.Message);
             }
-        }     
+        }
     }
 }

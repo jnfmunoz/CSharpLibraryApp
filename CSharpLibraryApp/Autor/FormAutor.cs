@@ -11,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
+using CSharpLibraryApp.Helpers;
 
 namespace CSharpLibraryApp.Autor
 {
@@ -80,8 +82,8 @@ namespace CSharpLibraryApp.Autor
             model.Pais = Convert.ToInt32(comboBoxPais.SelectedValue);
             model.FechaNacimiento = dateTimePickerFechaNacimiento.Value;
         }
-
-        private async void buttonGuardar_Click(object sender, EventArgs e)
+        
+        private async void metroButtonGuardar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -89,16 +91,56 @@ namespace CSharpLibraryApp.Autor
 
                 if (_inputModel.Pais == 0)
                 {
-                    MessageBox.Show("Selecciona un país válido");
+                    //MessageBox.Show("Selecciona un país válido");
+
+                    //MetroFramework.MetroMessageBox.Show(
+                    //    this,
+                    //    "Selecciona un país válido",
+                    //    "Advertencia",
+                    //    MessageBoxButtons.OK,
+                    //    MessageBoxIcon.Warning
+                    //);
+
+                    MetroMessageHelper.ShowWithOverlay(
+                        this,
+                        "Selecciona un país válido",
+                        "Advertencia",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+
                     return;
                 }
 
-                await autor.SaveAutorAsync(_inputModel);
-                this.Close();
+                //await autor.SaveAutorAsync(_inputModel);
+                //this.Close();
+                
+                var (success, message) = await autor.SaveAutorAsync(_inputModel);
+
+                MetroMessageHelper.ShowWithOverlay(
+                    this,
+                    message,
+                    success ? "Éxito" : "Error",
+                    MessageBoxButtons.OK,
+                    success ? MessageBoxIcon.Information : MessageBoxIcon.Error
+                );
+
+                if (success)
+                {
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar autor: " + ex.Message);
+                //MessageBox.Show("Error al guardar autor: " + ex.Message);
+
+                MetroMessageHelper.ShowWithOverlay(
+                    this,
+                    "Error al guardar autor: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
     }

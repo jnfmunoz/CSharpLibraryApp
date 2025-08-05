@@ -33,11 +33,11 @@
             this.comboBoxPais = new System.Windows.Forms.ComboBox();
             this.dateTimePickerFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.metroButtonCancelar = new MetroFramework.Controls.MetroButton();
             this.metroButtonGuardar = new MetroFramework.Controls.MetroButton();
+            this.metroButtonCancelar = new MetroFramework.Controls.MetroButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,38 +94,21 @@
             this.panel1.Size = new System.Drawing.Size(662, 335);
             this.panel1.TabIndex = 6;
             // 
-            // label1
+            // metroButtonGuardar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 65);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Autor";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(104, 134);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 19);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "País de nacimiento";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(93, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 19);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Fecha de nacimiento";
+            this.metroButtonGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.metroButtonGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroButtonGuardar.ForeColor = System.Drawing.Color.White;
+            this.metroButtonGuardar.Location = new System.Drawing.Point(233, 279);
+            this.metroButtonGuardar.Name = "metroButtonGuardar";
+            this.metroButtonGuardar.Size = new System.Drawing.Size(103, 25);
+            this.metroButtonGuardar.Style = MetroFramework.MetroColorStyle.White;
+            this.metroButtonGuardar.TabIndex = 9;
+            this.metroButtonGuardar.Text = "Guardar";
+            this.metroButtonGuardar.UseCustomBackColor = true;
+            this.metroButtonGuardar.UseCustomForeColor = true;
+            this.metroButtonGuardar.UseSelectable = true;
+            this.metroButtonGuardar.Click += new System.EventHandler(this.metroButtonGuardar_Click);
             // 
             // metroButtonCancelar
             // 
@@ -142,20 +125,38 @@
             this.metroButtonCancelar.UseCustomForeColor = true;
             this.metroButtonCancelar.UseSelectable = true;
             // 
-            // metroButtonGuardar
+            // label3
             // 
-            this.metroButtonGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.metroButtonGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroButtonGuardar.ForeColor = System.Drawing.Color.White;
-            this.metroButtonGuardar.Location = new System.Drawing.Point(233, 279);
-            this.metroButtonGuardar.Name = "metroButtonGuardar";
-            this.metroButtonGuardar.Size = new System.Drawing.Size(103, 25);
-            this.metroButtonGuardar.Style = MetroFramework.MetroColorStyle.White;
-            this.metroButtonGuardar.TabIndex = 9;
-            this.metroButtonGuardar.Text = "Guardar";
-            this.metroButtonGuardar.UseCustomBackColor = true;
-            this.metroButtonGuardar.UseCustomForeColor = true;
-            this.metroButtonGuardar.UseSelectable = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(93, 103);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(134, 19);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Fecha de nacimiento";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(104, 134);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 19);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "País de nacimiento";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(147, 65);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Autor";
             // 
             // FormAutor
             // 

@@ -78,18 +78,18 @@ namespace CSharpLibraryApp.Editorial
             model.Pais = Convert.ToInt32(comboBoxPais.SelectedValue);
         }
 
-        private async void buttonGuardar_Click(object sender, EventArgs e)
+        private async void metroButtonGuardar_Click(object sender, EventArgs e)
         {
             try
             {
                 MapFromUI(_inputModel);
-                
+
                 if (_inputModel.Pais == 0)
                 {
                     MessageBox.Show("Selecciona un país de origen válido");
                     return;
                 }
-                
+
                 await editorial.SaveEditorialAsync(_inputModel);
                 this.Close();
             }

@@ -78,6 +78,7 @@ namespace Logica
                     _dataGridView.DataSource = list;
                     DataGridViewHelper.RenameHeaderTextPais(_dataGridView);
                     DataGridViewHelper.AutoResizeColumns(_dataGridView);
+                    DataGridViewHelper.SetupDataGridViewDefaults(_dataGridView);
                 }
             }
             catch (Exception ex)
@@ -117,7 +118,7 @@ namespace Logica
             }
         }
 
-        public async Task SaveAutorAsync(AutorInputModel input)
+        public async Task<(bool Success, string Mssg)> SaveAutorAsync(AutorInputModel input)
         {
             using (var db = new Conexion())
             {
@@ -145,12 +146,14 @@ namespace Logica
                     }
 
                     await db.CommitTransactionAsync();
-                    MessageBox.Show("Autor guardado exitosamente.");
+                    //MessageBox.Show("Autor guardado exitosamente.");
+                    return (true, "Autor guardado exitosamente.");
                 }
                 catch (Exception ex)
                 {
                     await db.CommitTransactionAsync();
-                    MessageBox.Show("Autor guardado exitosamente.");
+                    //MessageBox.Show("Autor guardado exitosamente.");}
+                    return (false, $"Error al guardar el autor: {ex.Message}");
                 }
             }
         }

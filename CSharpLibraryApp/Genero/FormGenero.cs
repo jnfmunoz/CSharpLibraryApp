@@ -66,7 +66,7 @@ namespace CSharpLibraryApp.Genero
             model.Genero = textBoxNombre.Text.Trim();
         }
 
-        private async void buttonGuardar_Click(object sender, EventArgs e)
+        private async void metroButtonGuardar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -78,6 +78,6 @@ namespace CSharpLibraryApp.Genero
             {
                 MessageBox.Show("Error al guardar género: " + ex.Message);
             }
-        }
+        }        
     }
 }

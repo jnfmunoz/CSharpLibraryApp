@@ -31,11 +31,11 @@
             this.comboBoxAutor = new System.Windows.Forms.ComboBox();
             this.comboBoxLibro = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelAutor = new System.Windows.Forms.Label();
             this.metroButtonGuardar = new MetroFramework.Controls.MetroButton();
             this.metroButtonCancelar = new MetroFramework.Controls.MetroButton();
             this.labelLibro = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelAutor = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +72,17 @@
             this.panel1.Size = new System.Drawing.Size(662, 335);
             this.panel1.TabIndex = 15;
             // 
+            // labelAutor
+            // 
+            this.labelAutor.AutoSize = true;
+            this.labelAutor.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelAutor.ForeColor = System.Drawing.Color.White;
+            this.labelAutor.Location = new System.Drawing.Point(183, 103);
+            this.labelAutor.Name = "labelAutor";
+            this.labelAutor.Size = new System.Drawing.Size(44, 19);
+            this.labelAutor.TabIndex = 10;
+            this.labelAutor.Text = "Autor";
+            // 
             // metroButtonGuardar
             // 
             this.metroButtonGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -86,6 +97,7 @@
             this.metroButtonGuardar.UseCustomBackColor = true;
             this.metroButtonGuardar.UseCustomForeColor = true;
             this.metroButtonGuardar.UseSelectable = true;
+            this.metroButtonGuardar.Click += new System.EventHandler(this.metroButtonGuardar_Click);
             // 
             // metroButtonCancelar
             // 
@@ -123,17 +135,6 @@
             this.label1.Size = new System.Drawing.Size(300, 65);
             this.label1.TabIndex = 1;
             this.label1.Text = "Libro - Autor";
-            // 
-            // labelAutor
-            // 
-            this.labelAutor.AutoSize = true;
-            this.labelAutor.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.labelAutor.ForeColor = System.Drawing.Color.White;
-            this.labelAutor.Location = new System.Drawing.Point(183, 103);
-            this.labelAutor.Name = "labelAutor";
-            this.labelAutor.Size = new System.Drawing.Size(44, 19);
-            this.labelAutor.TabIndex = 10;
-            this.labelAutor.Text = "Autor";
             // 
             // FormLibroAutor
             // 

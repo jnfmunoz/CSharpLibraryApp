@@ -75,6 +75,7 @@ namespace Logica
                     _dataGridView.DataSource = list;
                     DataGridViewHelper.RenameHeaderTextPais(_dataGridView);
                     DataGridViewHelper.AutoResizeColumns(_dataGridView);
+                    DataGridViewHelper.SetupDataGridViewDefaults(_dataGridView);
                 }
             }
             catch (Exception ex)
