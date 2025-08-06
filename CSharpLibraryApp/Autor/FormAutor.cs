@@ -101,13 +101,20 @@ namespace CSharpLibraryApp.Autor
                     //    MessageBoxIcon.Warning
                     //);
 
-                    MetroMessageHelper.ShowWithOverlay(
-                        this,
-                        "Selecciona un país válido",
-                        "Advertencia",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
+                    //MetroMessageHelper.ShowWithOverlay(
+                    //    this,
+                    //    "Selecciona un país válido",
+                    //    "Advertencia",
+                    //    MessageBoxButtons.OK,
+                    //    MessageBoxIcon.Warning
+                    //);
+
+                    //MetroMessageHelper.ShowWithOverlay(
+                    //    this,
+                    //    "Selecciona un país válido"
+                    //);  
+
+                    MetroMessageHelper.ShowWithOverlay(this, "Selecciona un país válido");
 
                     return;
                 }
@@ -117,13 +124,20 @@ namespace CSharpLibraryApp.Autor
                 
                 var (success, message) = await autor.SaveAutorAsync(_inputModel);
 
-                MetroMessageHelper.ShowWithOverlay(
-                    this,
-                    message,
-                    success ? "Éxito" : "Error",
-                    MessageBoxButtons.OK,
-                    success ? MessageBoxIcon.Information : MessageBoxIcon.Error
-                );
+                //MetroMessageHelper.ShowWithOverlay(
+                //    this,
+                //    message,
+                //    success ? "Éxito" : "Error",
+                //    MessageBoxButtons.OK,
+                //    success ? MessageBoxIcon.Information : MessageBoxIcon.Error
+                //);
+
+                //MetroMessageHelper.ShowWithOverlay(
+                //        this,
+                //        message
+                //);
+
+                MetroMessageHelper.ShowWithOverlay(this, message);
 
                 if (success)
                 {
@@ -134,13 +148,20 @@ namespace CSharpLibraryApp.Autor
             {
                 //MessageBox.Show("Error al guardar autor: " + ex.Message);
 
-                MetroMessageHelper.ShowWithOverlay(
-                    this,
-                    "Error al guardar autor: " + ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                //MetroMessageHelper.ShowWithOverlay(
+                //    this,
+                //    "Error al guardar autor: " + ex.Message,
+                //    "Error",
+                //    MessageBoxButtons.OK,
+                //    MessageBoxIcon.Error
+                //);
+
+                //MetroMessageHelper.ShowWithOverlay(
+                //        this,
+                //        "Error al guardar autor: " + ex.Message
+                //);
+
+                MetroMessageHelper.ShowWithOverlay(this, "Error al guardar autor: " + ex.Message);
             }
         }
     }
